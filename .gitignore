@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.wrangler/
+.dev.vars
+.env
+.env.local
+*.tsbuildinfo
+.DS_Store
+.vscode/
+.idea/
+worker-configuration.d.ts
+_export-data/
