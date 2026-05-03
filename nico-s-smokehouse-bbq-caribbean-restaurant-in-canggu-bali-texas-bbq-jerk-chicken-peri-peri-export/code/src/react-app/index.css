@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm Wooden Theme */
+    --background: 28 40% 12%;
+    --foreground: 35 25% 90%;
+    --card: 28 35% 16%;
+    --card-foreground: 35 25% 90%;
+    --popover: 28 35% 16%;
+    --popover-foreground: 35 25% 90%;
+    --primary: 32 90% 50%;
+    --primary-foreground: 25 30% 8%;
+    --secondary: 28 30% 22%;
+    --secondary-foreground: 35 25% 90%;
+    --muted: 28 25% 25%;
+    --muted-foreground: 35 20% 55%;
+    --accent: 15 85% 50%;
+    --accent-foreground: 35 25% 95%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 28 30% 28%;
+    --input: 28 30% 28%;
+    --ring: 32 90% 50%;
+    --radius: 0.45rem;
+    
+    /* Custom colors */
+    --wood-dark: 25 40% 18%;
+    --wood-medium: 28 35% 28%;
+    --wood-light: 32 30% 40%;
+    --smoke: 30 15% 50%;
+    --ember: 15 85% 50%;
+    --char: 25 35% 10%;
+    --cream: 40 40% 94%;
+    --gold: 42 85% 55%;
+  }
+
+  .dark {
+    --background: 25 30% 8%;
+    --foreground: 35 25% 90%;
+    --card: 25 25% 12%;
+    --card-foreground: 35 25% 90%;
+    --popover: 25 25% 12%;
+    --popover-foreground: 35 25% 90%;
+    --primary: 32 90% 50%;
+    --primary-foreground: 25 30% 8%;
+    --secondary: 25 20% 18%;
+    --secondary-foreground: 35 25% 90%;
+    --muted: 25 15% 20%;
+    --muted-foreground: 35 15% 60%;
+    --accent: 8 75% 45%;
+    --accent-foreground: 35 25% 95%;
+    --destructive: 0 72.2% 50.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 25 20% 22%;
+    --input: 25 20% 22%;
+    --ring: 32 90% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Source Sans 3", system-ui, sans-serif;
+  }
+
+  button:not([disabled]),
+  [role="button"]:not([disabled]) {
+    cursor: pointer;
+  }
+}
+
+/* Wood grain texture overlay */
+.wood-texture {
+  position: relative;
+}
+
+.wood-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.03) 2px,
+      rgba(0,0,0,0.03) 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 50px,
+      rgba(139, 90, 43, 0.05) 50px,
+      rgba(139, 90, 43, 0.05) 51px
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Burnt edge effect */
+.burnt-edge {
+  box-shadow: 
+    inset 0 0 30px rgba(0, 0, 0, 0.5),
+    inset 0 0 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Smoke animation */
+@keyframes smoke-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    opacity: 0.15;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px) scale(1.5);
+  }
+}
+
+.smoke-particle {
+  animation: smoke-rise 4s ease-out infinite;
+}
+
+/* Menu book styles */
+.menu-book {
+  perspective: 2000px;
+}
+
+.menu-page {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+/* Glow effect for highlights */
+.ember-glow {
+  box-shadow: 
+    0 0 20px rgba(255, 100, 30, 0.3),
+    0 0 40px rgba(255, 100, 30, 0.1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(25 30% 8%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(28 30% 25%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(32 25% 35%);
+}
+
+/* Continuous marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 23s linear infinite;
+  width: max-content;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* iOS touch scrolling fix */
+.ios-scroll {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+/* Sports bar carousel - slower continuous scroll */
+.animate-sports-carousel {
+  animation: marquee 20s linear infinite;
+  width: max-content;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.animate-sports-carousel:hover {
+  animation-play-state: paused;
+}
+
+/* Hide scrollbar for slider */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Subtle pulse glow for headline */
+@keyframes pulse-subtle {
+  0%, 100% {
+    filter: drop-shadow(0 0 30px rgba(251,146,60,0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 50px rgba(251,146,60,0.8));
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
