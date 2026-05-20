@@ -1,0 +1,4 @@
+{
+  "extends": "next/core-web-vitals",
+  "ignorePatterns": ["nico-s-smokehouse-bbq-caribbean-restaurant-in-canggu-bali-texas-bbq-jerk-chicken-peri-peri-export/**"]
+}

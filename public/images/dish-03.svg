@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="540" viewBox="0 0 720 540" role="img" aria-label="Dish 03 placeholder">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#2B1E12"/><stop offset="1" stop-color="#1C130B"/>
+  </linearGradient></defs>
+  <rect width="720" height="540" fill="url(#g)"/>
+  <rect x="14" y="14" width="692" height="512" rx="16" fill="none" stroke="#93806C" stroke-opacity="0.35" stroke-width="2"/>
+  <text x="50%" y="237" font-family="Arial, sans-serif" font-size="36" letter-spacing="3" font-weight="700" fill="#EC4913" text-anchor="middle">NICO'S SMOKEHOUSE</text>
+  <text x="50%" y="303" font-family="Arial, sans-serif" font-size="60" font-weight="700" fill="#F6F2EA" text-anchor="middle">Dish 03</text>
+  <text x="50%" y="384" font-family="Arial, sans-serif" font-size="29.52" fill="#93806C" text-anchor="middle">placeholder &#183; replace with real photo</text>
+</svg>

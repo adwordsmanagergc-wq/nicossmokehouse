@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Bintang Sports Bar placeholder">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#2B1E12"/><stop offset="1" stop-color="#1C130B"/>
+  </linearGradient></defs>
+  <rect width="1200" height="800" fill="url(#g)"/>
+  <rect x="14" y="14" width="1172" height="772" rx="16" fill="none" stroke="#93806C" stroke-opacity="0.35" stroke-width="2"/>
+  <text x="50%" y="354.35" font-family="Arial, sans-serif" font-size="49" letter-spacing="3" font-weight="700" fill="#EC4913" text-anchor="middle">NICO'S SMOKEHOUSE</text>
+  <text x="50%" y="445.65" font-family="Arial, sans-serif" font-size="83" font-weight="700" fill="#F6F2EA" text-anchor="middle">Bintang Sports Bar</text>
+  <text x="50%" y="557.7" font-family="Arial, sans-serif" font-size="40.18" fill="#93806C" text-anchor="middle">placeholder &#183; replace with real photo</text>
+</svg>

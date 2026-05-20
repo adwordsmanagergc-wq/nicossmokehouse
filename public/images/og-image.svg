@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="BBQ &amp; Caribbean in Bali placeholder">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#2B1E12"/><stop offset="1" stop-color="#1C130B"/>
+  </linearGradient></defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <rect x="14" y="14" width="1172" height="602" rx="16" fill="none" stroke="#93806C" stroke-opacity="0.35" stroke-width="2"/>
+  <text x="50%" y="277.6" font-family="Arial, sans-serif" font-size="41" letter-spacing="3" font-weight="700" fill="#EC4913" text-anchor="middle">NICO'S SMOKEHOUSE</text>
+  <text x="50%" y="352.4" font-family="Arial, sans-serif" font-size="68" font-weight="700" fill="#F6F2EA" text-anchor="middle">BBQ &amp; Caribbean in Bali</text>
+  <text x="50%" y="444.2" font-family="Arial, sans-serif" font-size="33.62" fill="#93806C" text-anchor="middle">placeholder &#183; replace with real photo</text>
+</svg>
