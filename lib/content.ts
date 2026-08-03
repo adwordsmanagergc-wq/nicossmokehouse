@@ -106,11 +106,7 @@ export const seo = {
 //  NAVIGATION
 // -----------------------------------------------------------------------------
 export const nav = {
-  links: [
-    { label: "Specialties", href: "#specialties" },
-    { label: "Menu", href: "#menu" },
-    { label: "FAQ", href: "#faq" },
-  ],
+  links: [] as { label: string; href: string }[],
   cta: { label: "Book a Table", href: links.whatsappBooking },
 };
 

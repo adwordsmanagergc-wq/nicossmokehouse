@@ -47,7 +47,7 @@ Every text string on the site, in one place for proofreading and copy edits.
 
 ## Navigation (`nav`)
 
-Links: Specialties · Menu · FAQ
+Links: _(none — logo + Book a Table only)_
 CTA: **Book a Table**
 
 ---
