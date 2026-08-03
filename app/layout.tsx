@@ -27,7 +27,12 @@ export const metadata: Metadata = {
   applicationName: site.name,
   authors: [{ name: site.name }],
   creator: site.name,
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    types: {
+      "text/plain": [{ url: "/llms.txt", title: "AI/LLM Information" }],
+    },
+  },
   openGraph: {
     type: "website",
     url: site.url,

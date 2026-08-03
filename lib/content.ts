@@ -15,7 +15,7 @@ export const IMAGES = {
   logo: "/images/nicos-logo-black-surround.png",
   heroBg: "/images/hero.jpg",
   ogImage: "/images/hero.jpg",
-  specialtyJamaican: "/images/jerk-chicken-bali.jpg",
+  specialtyJamaican: "/images/caribbean-food-bali.png",
   specialtyTexas: "/images/nicossmokehouserib.png",
   specialtyPeriPeri: "/images/nicosperiperi.png",
   dishes: [
