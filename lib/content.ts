@@ -16,7 +16,7 @@ export const IMAGES = {
   heroBg: "/images/hero.jpg",
   ogImage: "/images/hero.jpg",
   specialtyJamaican: "/images/jerk-chicken-bali.jpg",
-  specialtyTexas: "/images/specialty-texas.svg",
+  specialtyTexas: "/images/nicossmokehouserib.png",
   specialtyPeriPeri: "/images/specialty-periperi.svg",
   dishes: [
     "/images/dish-01.svg",
