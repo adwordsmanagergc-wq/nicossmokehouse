@@ -54,6 +54,7 @@ export const links = {
   instagram: "https://instagram.com/nicossmokehouse",
   gofood:
     "https://gofood.co.id/bali/restaurant/nico-s-smokehouse-tibubeneng-29af8618-1b2e-4d45-8522-e5c673344d15",
+  grab: "https://food.grab.com/id/id/restaurant/nico-s-smokehouse-tibubeneng-delivery/6-C7LBDE2ECFJUTE",
   whatsappBooking: "https://wa.me/6287867966662",
   whatsappCatering:
     "https://wa.me/6287867966662?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20catering",
@@ -128,6 +129,13 @@ export const hero = {
       href: links.gofood,
       icon: null,
       variant: "green-bright" as const,
+      external: true,
+    },
+    {
+      label: "Order via Grab",
+      href: links.grab,
+      icon: null,
+      variant: "grab" as const,
       external: true,
     },
   ],

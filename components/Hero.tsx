@@ -12,6 +12,7 @@ const CTA_VARIANTS: Record<string, string> = {
     "bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 text-white",
   "green-bright":
     "bg-gradient-to-r from-green-600 via-green-500 to-green-400 text-white",
+  grab: "bg-gradient-to-r from-[#00B14F] via-[#00A046] to-[#008A3C] text-white",
 };
 
 export default function Hero() {
