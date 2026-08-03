@@ -119,3 +119,14 @@ CTA: **Book a Table**
 **Final CTA:** Book a Table
 **Copyright:** © (current year) Nico's Smokehouse. All rights reserved.
 **Credit:** Website & Marketing by Metatap Pty Ltd
+
+---
+
+## Blog posts (`lib/blog/*`)
+
+Each blog post has its own content module in `lib/blog/` and its own
+route folder in `app/`. Edit the content module to change copy.
+
+| Post | Route | Content file |
+|------|-------|--------------|
+| Where to Find Peri Peri Chicken in Canggu, Bali | `/peri-peri-chicken-canggu-bali` | `lib/blog/peri-peri.ts` |

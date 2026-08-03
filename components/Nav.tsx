@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Utensils } from "lucide-react";
 import { nav, site, IMAGES } from "@/lib/content";
 
@@ -10,7 +11,7 @@ export default function Nav() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-brown/20 bg-smoke/80 backdrop-blur-md">
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4">
-        <a href="#top" className="flex items-center gap-2.5" aria-label={`${site.name} — back to top`}>
+        <Link href="/" className="flex items-center gap-2.5" aria-label={`${site.name} — home`}>
           <Image
             src={IMAGES.logo}
             alt=""
@@ -19,7 +20,7 @@ export default function Nav() {
             className="h-10 w-10 rounded-full"
           />
           <span className="font-display text-xl tracking-wide text-cream">{site.name}</span>
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-7 md:flex">
           {nav.links.map((link) => (
