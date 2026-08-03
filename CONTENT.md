@@ -135,3 +135,42 @@ route folder in `app/`. Edit the content module to change copy.
 | Best BBQ Restaurant in Canggu, Bali | `/best-bbq-canggu` | `lib/blog/best-bbq-canggu.ts` |
 
 All three of the footer's specific blog links (Caribbean Food, Peri Peri Chicken, Texas BBQ) point at their matching route above. The "All Blog Posts" link still points at `/blog`, which is not built in this scope — either create an index page later or repoint it in `lib/content.ts`.
+
+---
+
+## Catering pages (`lib/catering/*`)
+
+Every catering page pulls copy from `lib/catering/`. The suburb pages all share
+one renderer (`components/catering/SuburbCateringPage.tsx`) driven by
+`lib/catering/suburbs.ts` — add a new suburb by pushing to `SUBURB_LIST` and
+creating a 3-line `app/catering-{slug}/page.tsx`.
+
+**Catering hub**
+
+| Page | Route | Content file |
+|------|-------|--------------|
+| All catering (hub) | `/catering-bali` | inline in `app/catering-bali/page.tsx` |
+
+**Cuisine catering pages** (each has a suburb dropdown)
+
+| Page | Route | Content file |
+|------|-------|--------------|
+| Texas BBQ Catering in Bali | `/texas-bbq-catering-bali` | `lib/catering/texas-bbq.ts` |
+| Caribbean Catering in Bali | `/caribbean-catering-bali` | `lib/catering/caribbean.ts` |
+| Peri Peri Catering in Bali | `/peri-peri-catering-bali` | `lib/catering/peri-peri.ts` |
+
+**Suburb catering pages** (each has a cuisine dropdown)
+
+| Page | Route |
+|------|-------|
+| Canggu | `/catering-canggu` |
+| Seminyak | `/catering-seminyak` |
+| Berawa | `/catering-berawa` |
+| Pererenan | `/catering-pererenan` |
+| Umalas | `/catering-umalas` |
+| Legian | `/catering-legian` |
+| Sanur | `/catering-sanur` |
+| Nusa Dua | `/catering-nusa-dua` |
+| Uluwatu | `/catering-uluwatu` |
+
+Suburb-page copy (intro, landmarks, target audience) lives in `lib/catering/suburbs.ts`.

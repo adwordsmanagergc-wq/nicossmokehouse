@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/content";
+import { SUBURB_LIST } from "@/lib/catering/suburbs";
+import { CUISINE_LIST } from "@/lib/catering/cuisines";
 
-// This is a single-page site, so the sitemap lists only the homepage.
-// Add entries here as you build out new routes.
 const BLOG_SLUGS = [
   "peri-peri-chicken-canggu-bali",
   "caribbean-food-canggu-bali",
@@ -12,13 +12,41 @@ const BLOG_SLUGS = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
+  const monthly = "monthly" as const;
+
   return [
     { url: site.url, lastModified: now, changeFrequency: "weekly", priority: 1 },
+
+    // Blog / pillar posts
     ...BLOG_SLUGS.map((slug) => ({
       url: `${site.url}/${slug}`,
       lastModified: now,
-      changeFrequency: "monthly" as const,
+      changeFrequency: monthly,
       priority: 0.8,
+    })),
+
+    // Catering hub
+    {
+      url: `${site.url}/catering-bali`,
+      lastModified: now,
+      changeFrequency: monthly,
+      priority: 0.9,
+    },
+
+    // Cuisine-specific catering pages
+    ...CUISINE_LIST.map((c) => ({
+      url: `${site.url}/${c.slug}`,
+      lastModified: now,
+      changeFrequency: monthly,
+      priority: 0.8,
+    })),
+
+    // Suburb-specific catering pages
+    ...SUBURB_LIST.map((s) => ({
+      url: `${site.url}/catering-${s.slug}`,
+      lastModified: now,
+      changeFrequency: monthly,
+      priority: 0.7,
     })),
   ];
 }
