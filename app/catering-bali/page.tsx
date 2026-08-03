@@ -14,7 +14,7 @@ const page = {
   title: "BBQ, Caribbean & Peri Peri Catering in Bali",
   eyebrow: "Catering · Bali",
   metaDescription:
-    "Nico's Smokehouse catering across Bali — Texas BBQ, Caribbean and Peri Peri. Villas, weddings, corporate. Nine service areas from Canggu to Uluwatu. WhatsApp to book.",
+    "Nico's Smokehouse catering across Bali — Texas BBQ, Caribbean and Peri Peri. Villas, weddings, corporate. Nine areas from Canggu to Uluwatu.",
   subtitle:
     "Three fire cuisines. One kitchen. Delivered to villas, weddings and events across Bali.",
   meta: `${site.name} · Serving all of ${site.address.region} · Open 12pm – 12am Daily`,

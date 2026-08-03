@@ -6,7 +6,7 @@ export const texasBbqPost = {
   title: "Where to Find Texas BBQ in Canggu, Bali",
   eyebrow: "Blog · Texas BBQ",
   metaDescription:
-    "Nico's Smokehouse in Canggu serves authentic Texas BBQ — 12-14 hour smoked brisket, US Prime pork ribs, beef ribs and smoked sausage. Low and slow, the way it should be.",
+    "Authentic Texas BBQ in Canggu, Bali. 14-hour smoked brisket, US Prime pork ribs, beef ribs and smoked sausage at Nico's Smokehouse.",
   subtitle:
     "Craving slow-smoked brisket, tender ribs, or juicy smoked sausage in Bali? Nico's Smokehouse brings authentic Texas BBQ to Canggu.",
   meta: `${site.name} · ${site.address.locality}, ${site.address.region} · Open 12pm – 12am Daily`,

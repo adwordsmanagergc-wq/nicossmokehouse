@@ -7,7 +7,7 @@ export const texasBbqCatering = {
   title: "Texas BBQ Catering in Bali — 14-Hour Smoked Brisket & Ribs",
   eyebrow: "Catering · Texas BBQ",
   metaDescription:
-    "Texas BBQ catering across Bali — Nico's Smokehouse brings 14-hour smoked brisket, US Prime pork ribs, beef ribs and smoked sausage to your villa, wedding or event.",
+    "Texas BBQ catering across Bali — 14-hour smoked brisket, US Prime pork ribs, beef ribs and smoked sausage for your villa, wedding or event.",
   subtitle:
     "14-hour smoked brisket, US Prime pork ribs and beef ribs delivered to villas, weddings and events across Bali.",
   meta: `${site.name} · Catering across ${site.address.region} · Open 12pm – 12am Daily`,

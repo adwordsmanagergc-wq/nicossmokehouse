@@ -6,7 +6,7 @@ export const bestBbqPost = {
   title: "Best BBQ Restaurant in Canggu, Bali",
   eyebrow: "Blog · Best BBQ",
   metaDescription:
-    "Nico's Smokehouse is the best BBQ restaurant in Canggu — 14-hour smoked brisket, US Prime pork ribs, jerk chicken and peri peri. Book a table or catering in Bali.",
+    "Nico's Smokehouse — the best BBQ in Canggu. 14-hour smoked brisket, US Prime pork ribs, jerk chicken and peri peri. Book a table or catering.",
   subtitle:
     "Premium slow-smoked BBQ, unforgettable flavours, and one of Canggu's most talked-about dining experiences.",
   meta: `${site.name} · ${site.address.locality}, ${site.address.region} · Open 12pm – 12am Daily`,

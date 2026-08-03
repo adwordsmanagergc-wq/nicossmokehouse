@@ -11,7 +11,7 @@ export const caribbeanCatering = {
   title: "Caribbean Catering in Bali — Jerk Chicken, Curry Goat & Oxtail",
   eyebrow: "Catering · Caribbean",
   metaDescription:
-    "Caribbean catering across Bali — Nico's Smokehouse brings authentic jerk chicken, curry goat, oxtail and Jamaican sides to your villa, wedding or event. WhatsApp to book.",
+    "Caribbean catering across Bali — jerk chicken, curry goat, oxtail and Jamaican sides for your villa, wedding or event. WhatsApp Nico's to book.",
   subtitle:
     "Bring authentic Jamaican jerk chicken, curry goat and Caribbean soul food to your villa, wedding or event — anywhere in Bali.",
   meta: `${site.name} · Catering across ${site.address.region} · Open 12pm – 12am Daily`,

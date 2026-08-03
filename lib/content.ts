@@ -69,7 +69,7 @@ export const seo = {
   title:
     "Nico's Smokehouse | BBQ & Caribbean Restaurant in Canggu, Bali | Texas BBQ, Jerk Chicken & Peri Peri",
   description:
-    "Nico's Smokehouse is an authentic BBQ restaurant in Canggu, Bali mixing Texas-style brisket, Caribbean soul food and peri-peri chicken. Enjoy slow-smoked brisket, jerk chicken, pork ribs and catering for private events.",
+    "Nico's Smokehouse — Canggu's air-conditioned BBQ restaurant. Texas smoked brisket, Jamaican jerk chicken and Peri Peri, plus Bali-wide catering.",
   keywords: [
     "BBQ Canggu",
     "smokehouse Canggu",

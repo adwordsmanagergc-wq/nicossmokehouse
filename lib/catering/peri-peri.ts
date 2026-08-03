@@ -7,7 +7,7 @@ export const periPeriCatering = {
   title: "Peri Peri Catering in Bali — Flame-Grilled Portuguese-African Chicken",
   eyebrow: "Catering · Peri Peri",
   metaDescription:
-    "Peri Peri catering across Bali — Nico's Smokehouse flame-grills fresh chicken with 6 signature sauces for your villa, wedding or event. Fresh alternative to Nando's. WhatsApp to book.",
+    "Peri Peri catering across Bali — flame-grilled chicken with 6 signature sauces for your villa, wedding or event. The fresh alternative to Nando's.",
   subtitle:
     "Flame-grilled Peri Peri chicken with 6 signature sauces, catered to villas, weddings and events across Bali.",
   meta: `${site.name} · Catering across ${site.address.region} · Open 12pm – 12am Daily`,
