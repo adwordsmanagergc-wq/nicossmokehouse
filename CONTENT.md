@@ -47,7 +47,7 @@ Every text string on the site, in one place for proofreading and copy edits.
 
 ## Navigation (`nav`)
 
-Links: Specialties · Menu · Sports Bar · FAQ
+Links: Specialties · Menu · FAQ
 CTA: **Book a Table**
 
 ---
@@ -86,25 +86,6 @@ CTA: **Book a Table**
 **Heading:** FRESH OFF THE SMOKE & THE FIRE
 **Button:** View Full Menu → GoFood
 (12 scrolling dish photos.)
-
----
-
-## Sports bar (`sportsBar`)
-
-**Badge:** COMING SOON
-**Heading:** NICO'S BINTANG SPORTS BAR
-**Sub-heading:** The Ultimate Sports Viewing Experience in Bali
-
-**Sport tags:** 🥊 UFC · ⚽ Football · 🏆 Bali Fight Events · 🏀 Basketball · 🏈 NFL · 🏎️ F1
-
-**Description:** Watch the biggest fights, matches, and sporting events on the big screen with ice-cold Bintangs and our legendary BBQ. **Private viewing for up to 30 people!**
-
-**Feature cards:**
-- 📺 **Big Screen Action** — Massive projector screen for the best viewing experience
-- 🍺 **Ice-Cold Bintangs** — Drinks flowing all game long with our full bar
-- 👥 **Up to 30 People** — Perfect for group bookings and private events
-
-**CTA:** Stay tuned for opening announcements! → **Follow for Updates** (Instagram)
 
 ---
 

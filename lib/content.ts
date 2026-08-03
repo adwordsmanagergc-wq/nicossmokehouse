@@ -18,7 +18,6 @@ export const IMAGES = {
   specialtyJamaican: "/images/specialty-jamaican.svg",
   specialtyTexas: "/images/specialty-texas.svg",
   specialtyPeriPeri: "/images/specialty-periperi.svg",
-  sportsBar: ["/images/sports-bar-01.svg", "/images/sports-bar-02.svg"],
   dishes: [
     "/images/dish-01.svg",
     "/images/dish-02.svg",
@@ -110,7 +109,6 @@ export const nav = {
   links: [
     { label: "Specialties", href: "#specialties" },
     { label: "Menu", href: "#menu" },
-    { label: "Sports Bar", href: "#sports-bar" },
     { label: "FAQ", href: "#faq" },
   ],
   cta: { label: "Book a Table", href: links.whatsappBooking },
@@ -209,53 +207,6 @@ export const menuPreview = {
     alt: `Freshly smoked BBQ and Caribbean dish ${i + 1} at Nico's Smokehouse, Canggu Bali`,
   })),
 };
-
-// -----------------------------------------------------------------------------
-//  SPORTS BAR — "Coming Soon"
-// -----------------------------------------------------------------------------
-export const sportsBar = {
-  badge: "COMING SOON",
-  heading: "NICO'S BINTANG SPORTS BAR",
-  subheading: "The Ultimate Sports Viewing Experience in Bali",
-  sports: [
-    { emoji: "🥊", label: "UFC" },
-    { emoji: "⚽", label: "Football" },
-    { emoji: "🏆", label: "Bali Fight Events" },
-    { emoji: "🏀", label: "Basketball" },
-    { emoji: "🏈", label: "NFL" },
-    { emoji: "🏎️", label: "F1" },
-  ],
-  images: sportsBarImages(),
-  descriptionLead:
-    "Watch the biggest fights, matches, and sporting events on the big screen with ice-cold Bintangs and our legendary BBQ.",
-  descriptionHighlight: "Private viewing for up to 30 people!",
-  features: [
-    {
-      emoji: "📺",
-      title: "Big Screen Action",
-      text: "Massive projector screen for the best viewing experience",
-    },
-    {
-      emoji: "🍺",
-      title: "Ice-Cold Bintangs",
-      text: "Drinks flowing all game long with our full bar",
-    },
-    {
-      emoji: "👥",
-      title: "Up to 30 People",
-      text: "Perfect for group bookings and private events",
-    },
-  ],
-  ctaNote: "Stay tuned for opening announcements!",
-  cta: { label: "Follow for Updates", href: links.instagram },
-};
-
-function sportsBarImages() {
-  return IMAGES.sportsBar.map((src) => ({
-    src,
-    alt: "Nico's Bintang Sports Bar — watch UFC, football and Bali fight events",
-  }));
-}
 
 // -----------------------------------------------------------------------------
 //  FAQ  (verbatim from the live site — 6 questions)

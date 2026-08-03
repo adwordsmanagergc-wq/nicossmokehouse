@@ -23,8 +23,6 @@ ASSETS=(
   "specialty-jamaican|Jerk-Chicken-Bali.jpg"
   "specialty-texas|Screenshot-2026-03-20-at-4.30.38-pm.png"
   "specialty-periperi|peri-peri-chicken-canggu-bali.jpg"
-  "sports-bar-01|nicos-sports-bar.png"
-  "sports-bar-02|openart-image_1774153537061_7a0d3a5c_1774153537109_393f27d5.png"
   "dish-01|Screenshot-2026-03-20-at-4.30.38-pm.png"
   "dish-02|Screenshot-2026-03-20-at-4.30.50-pm.png"
   "dish-03|Screenshot-2026-03-20-at-4.30.59-pm.png"

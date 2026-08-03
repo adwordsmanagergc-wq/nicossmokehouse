@@ -41,8 +41,6 @@ const specs = [
   ["specialty-jamaican", () => rect(900, 720, "Jamaican Soul")],
   ["specialty-texas", () => rect(900, 720, "Texas BBQ")],
   ["specialty-periperi", () => rect(900, 720, "Peri Peri Fire")],
-  ["sports-bar-01", () => rect(1200, 800, "Bintang Sports Bar")],
-  ["sports-bar-02", () => rect(1200, 800, "Bintang Sports Bar")],
   ["logo", () => badge(600)],
 ];
 for (let i = 1; i <= 12; i++) {

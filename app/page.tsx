@@ -1,7 +1,6 @@
 import Hero from "@/components/Hero";
 import Specialties from "@/components/Specialties";
 import MenuPreview from "@/components/MenuPreview";
-import SportsBarFeature from "@/components/SportsBarFeature";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import StickyBookButton from "@/components/StickyBookButton";
@@ -18,7 +17,6 @@ export default function HomePage() {
         <Hero />
         <Specialties />
         <MenuPreview />
-        <SportsBarFeature />
         <FAQ />
       </main>
       <Footer />
