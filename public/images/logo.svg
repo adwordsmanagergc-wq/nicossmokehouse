@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-label="Nico's Smokehouse logo placeholder">
-  <circle cx="300" cy="300" r="300" fill="#161009"/>
-  <circle cx="300" cy="300" r="290" fill="none" stroke="#EC4913" stroke-width="3"/>
-  <circle cx="300" cy="300" r="274" fill="none" stroke="#93806C" stroke-opacity="0.5" stroke-width="2"/>
-  <text x="50%" y="258" font-family="Arial, sans-serif" font-size="81" letter-spacing="2" font-weight="800" fill="#F6F2EA" text-anchor="middle">NICO'S</text>
-  <text x="50%" y="342" font-family="Arial, sans-serif" font-size="69" letter-spacing="1.5" font-weight="800" fill="#EC4913" text-anchor="middle">SMOKEHOUSE</text>
-  <text x="50%" y="420" font-family="Arial, sans-serif" font-size="45" letter-spacing="5" font-weight="600" fill="#FBBF24" text-anchor="middle">BALI</text>
-</svg>
