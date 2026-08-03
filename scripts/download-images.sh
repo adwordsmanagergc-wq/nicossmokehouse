@@ -23,18 +23,6 @@ ASSETS=(
   "specialty-jamaican|Jerk-Chicken-Bali.jpg"
   "specialty-texas|Screenshot-2026-03-20-at-4.30.38-pm.png"
   "specialty-periperi|peri-peri-chicken-canggu-bali.jpg"
-  "dish-01|Screenshot-2026-03-20-at-4.30.38-pm.png"
-  "dish-02|Screenshot-2026-03-20-at-4.30.50-pm.png"
-  "dish-03|Screenshot-2026-03-20-at-4.30.59-pm.png"
-  "dish-04|Screenshot-2026-03-20-at-4.30.26-pm.png"
-  "dish-05|Screenshot-2026-03-20-at-4.30.06-pm.png"
-  "dish-06|Screenshot-2026-03-20-at-4.31.10-pm.png"
-  "dish-07|Screenshot-2026-03-20-at-4.31.18-pm.png"
-  "dish-08|Screenshot-2026-03-20-at-4.31.34-pm.png"
-  "dish-09|Screenshot-2026-03-20-at-4.31.42-pm.png"
-  "dish-10|Screenshot-2026-03-20-at-4.31.58-pm.png"
-  "dish-11|Screenshot-2026-03-20-at-11.24.28-pm.png"
-  "dish-12|Screenshot-2026-03-20-at-11.23.15-pm.png"
 )
 
 for entry in "${ASSETS[@]}"; do

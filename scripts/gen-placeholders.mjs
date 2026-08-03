@@ -43,10 +43,6 @@ const specs = [
   ["specialty-periperi", () => rect(900, 720, "Peri Peri Fire")],
   ["logo", () => badge(600)],
 ];
-for (let i = 1; i <= 12; i++) {
-  specs.push([`dish-${String(i).padStart(2, "0")}`, () => rect(720, 540, `Dish ${String(i).padStart(2, "0")}`)]);
-}
-
 for (const [name, fn] of specs) {
   writeFileSync(new URL(`${name}.svg`, outDir), fn());
 }

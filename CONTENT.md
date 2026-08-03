@@ -79,15 +79,6 @@ CTA: **Book a Table**
 
 ---
 
-## Menu preview (`menuPreview`)
-
-**Eyebrow:** FROM THE PIT
-**Heading:** FRESH OFF THE SMOKE & THE FIRE
-**Button:** View Full Menu → GoFood
-(12 scrolling dish photos.)
-
----
-
 ## FAQ (`faq`)
 
 **Eyebrow:** FREQUENTLY ASKED · **Heading:** QUESTIONS

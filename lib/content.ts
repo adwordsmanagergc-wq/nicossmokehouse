@@ -18,20 +18,6 @@ export const IMAGES = {
   specialtyJamaican: "/images/caribbean-food-bali.png",
   specialtyTexas: "/images/nicossmokehouserib.png",
   specialtyPeriPeri: "/images/nicosperiperi.png",
-  dishes: [
-    "/images/dish-01.svg",
-    "/images/dish-02.svg",
-    "/images/dish-03.svg",
-    "/images/dish-04.svg",
-    "/images/dish-05.svg",
-    "/images/dish-06.svg",
-    "/images/dish-07.svg",
-    "/images/dish-08.svg",
-    "/images/dish-09.svg",
-    "/images/dish-10.svg",
-    "/images/dish-11.svg",
-    "/images/dish-12.svg",
-  ],
 };
 
 // -----------------------------------------------------------------------------
@@ -125,10 +111,10 @@ export const hero = {
   ctas: [
     {
       label: "View Our Menu",
-      href: "#menu",
+      href: links.gofood,
       icon: "utensils" as const,
       variant: "amber" as const,
-      external: false,
+      external: true,
     },
     {
       label: "@nicossmokehouse",
@@ -182,19 +168,6 @@ export const specialties = {
         "Flame-grilled peri peri chicken at Nico's Smokehouse Canggu",
     },
   ],
-};
-
-// -----------------------------------------------------------------------------
-//  MENU PREVIEW — "From The Pit"
-// -----------------------------------------------------------------------------
-export const menuPreview = {
-  eyebrow: "FROM THE PIT",
-  heading: "FRESH OFF THE SMOKE & THE FIRE",
-  cta: { label: "View Full Menu", href: links.gofood },
-  dishes: IMAGES.dishes.map((src, i) => ({
-    src,
-    alt: `Freshly smoked BBQ and Caribbean dish ${i + 1} at Nico's Smokehouse, Canggu Bali`,
-  })),
 };
 
 // -----------------------------------------------------------------------------
