@@ -58,10 +58,9 @@ CTA: **Book a Table**
 - **Sub-headline:** Where Texas BBQ meets Caribbean Soul & Peri Peri Fire in the heart of Bali
 - **Location pill:** Canggu, Bali — Get Directions →
 - **CTAs:**
-  1. Build Your Order → GoFood
-  2. View Our Menu → menu section
-  3. @nicossmokehouse → Instagram
-  4. Order Now via GoFood → GoFood
+  1. View Our Menu → menu section
+  2. @nicossmokehouse → Instagram
+  3. Order Now via GoFood → GoFood
 - **Floating button (always visible):** Book a Table → WhatsApp
 
 ---
@@ -118,7 +117,7 @@ CTA: **Book a Table**
 **Tagline:** Authentic BBQ & Caribbean Cuisine in Bali
 **Social:** @nicossmokehouse
 
-**Action buttons:** Build Your Order · Catering Services · Reserve a Table
+**Action buttons:** Catering Services · Reserve a Table
 
 **Blogs menu:** All Blog Posts · Caribbean Food · Peri Peri Chicken · Texas BBQ
 

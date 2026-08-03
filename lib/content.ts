@@ -124,13 +124,6 @@ export const hero = {
     "Nico's Smokehouse BBQ restaurant rustic wooden interior, Canggu, Bali",
   ctas: [
     {
-      label: "Build Your Order",
-      href: links.gofood,
-      icon: "flame" as const,
-      variant: "green" as const,
-      external: true,
-    },
-    {
       label: "View Our Menu",
       href: "#menu",
       icon: "utensils" as const,
@@ -254,7 +247,6 @@ export const footer = {
   tagline: "Authentic BBQ & Caribbean Cuisine in Bali",
   instagram: { label: "@nicossmokehouse", href: links.instagram },
   actions: [
-    { label: "Build Your Order", href: links.gofood, icon: "flame" as const, variant: "green" as const },
     {
       label: "Catering Services",
       href: links.whatsappCatering,
