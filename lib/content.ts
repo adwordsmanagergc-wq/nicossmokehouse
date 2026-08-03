@@ -12,7 +12,7 @@
 //  (e.g. "/images/hero-wooden-wall.jpg"). See README.md → "Images".
 // -----------------------------------------------------------------------------
 export const IMAGES = {
-  logo: "/images/logo.png",
+  logo: "/images/nicos-logo-white.png",
   heroBg: "/images/hero.jpg",
   ogImage: "/images/hero.jpg",
   specialtyJamaican: "/images/specialty-jamaican.svg",
