@@ -130,3 +130,8 @@ route folder in `app/`. Edit the content module to change copy.
 | Post | Route | Content file |
 |------|-------|--------------|
 | Where to Find Peri Peri Chicken in Canggu, Bali | `/peri-peri-chicken-canggu-bali` | `lib/blog/peri-peri.ts` |
+| Where to Find Jamaican & Caribbean Soul Food in Canggu, Bali | `/caribbean-food-canggu-bali` | `lib/blog/caribbean-food.ts` |
+| Where to Find Texas BBQ in Canggu, Bali | `/texas-bbq-canggu-bali` | `lib/blog/texas-bbq.ts` |
+| Best BBQ Restaurant in Canggu, Bali | `/best-bbq-canggu` | `lib/blog/best-bbq-canggu.ts` |
+
+All three of the footer's specific blog links (Caribbean Food, Peri Peri Chicken, Texas BBQ) point at their matching route above. The "All Blog Posts" link still points at `/blog`, which is not built in this scope — either create an index page later or repoint it in `lib/content.ts`.

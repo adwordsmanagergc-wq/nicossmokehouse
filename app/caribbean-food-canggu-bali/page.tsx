@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { periPeriPost as post } from "@/lib/blog/peri-peri";
+import { caribbeanFoodPost as post } from "@/lib/blog/caribbean-food";
 import { buildPostMetadata, buildBlogJsonLd } from "@/lib/blog/utils";
 import BlogHero from "@/components/blog/BlogHero";
 import BlogFAQ from "@/components/blog/BlogFAQ";
@@ -9,7 +9,7 @@ import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = buildPostMetadata(post);
 
-export default function PeriPeriBlogPage() {
+export default function CaribbeanFoodPage() {
   return (
     <>
       <script
@@ -25,7 +25,7 @@ export default function PeriPeriBlogPage() {
           meta={post.meta}
         />
 
-        {/* Intro */}
+        {/* Intro with feature image */}
         <section className="bg-smoke px-4 py-16">
           <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[3fr_2fr] md:items-center">
             <Reveal>
@@ -46,7 +46,7 @@ export default function PeriPeriBlogPage() {
                   alt={post.intro.image.alt}
                   fill
                   sizes="(min-width: 768px) 40vw, 100vw"
-                  className="object-contain p-4"
+                  className="object-cover"
                 />
               </div>
             </Reveal>
@@ -57,14 +57,16 @@ export default function PeriPeriBlogPage() {
         <section className="bg-gradient-to-b from-smoke to-char px-4 py-16">
           <div className="mx-auto max-w-6xl">
             <Reveal className="text-center">
-              <span className="text-sm font-medium tracking-[0.2em] text-fire">ON THE MENU</span>
+              <span className="text-sm font-medium tracking-[0.2em] text-fire">
+                {post.dishes.eyebrow}
+              </span>
               <h2 className="mt-2 font-display text-3xl tracking-wide text-cream md:text-5xl">
                 {post.dishes.heading}
               </h2>
             </Reveal>
             <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {post.dishes.items.map((dish, i) => (
-                <Reveal key={dish.title} delay={i * 60}>
+                <Reveal key={dish.title} delay={i * 40}>
                   <article className="h-full rounded-xl border border-amber-700/30 bg-black/40 p-6">
                     <h3 className="font-display text-2xl tracking-wide text-fire">{dish.title}</h3>
                     <p className="mt-3 text-sm leading-relaxed text-cream/80">{dish.description}</p>
@@ -72,42 +74,6 @@ export default function PeriPeriBlogPage() {
                 </Reveal>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Sauces table */}
-        <section className="bg-char px-4 py-16">
-          <div className="mx-auto max-w-4xl">
-            <Reveal className="text-center">
-              <span className="text-sm font-medium tracking-[0.2em] text-fire">CHOOSE YOUR HEAT</span>
-              <h2 className="mt-2 font-display text-3xl tracking-wide text-cream md:text-5xl">
-                {post.sauces.heading}
-              </h2>
-            </Reveal>
-            <Reveal className="mt-10 overflow-hidden rounded-xl border border-amber-700/30 bg-black/40">
-              <div className="overflow-x-auto">
-                <table className="w-full text-left">
-                  <thead className="bg-black/40 text-xs uppercase tracking-widest text-brown">
-                    <tr>
-                      <th className="px-5 py-3">Sauce</th>
-                      <th className="px-5 py-3">Heat</th>
-                      <th className="px-5 py-3">Description</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-brown/20 text-sm">
-                    {post.sauces.items.map((sauce) => (
-                      <tr key={sauce.name} className="align-top">
-                        <td className="px-5 py-4 font-semibold text-cream">{sauce.name}</td>
-                        <td className="whitespace-nowrap px-5 py-4 text-cream-dim">
-                          <span aria-hidden="true">{sauce.heat}</span>
-                        </td>
-                        <td className="px-5 py-4 text-cream/75">{sauce.description}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </Reveal>
           </div>
         </section>
 
