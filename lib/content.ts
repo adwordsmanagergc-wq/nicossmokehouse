@@ -148,6 +148,7 @@ export const specialties = {
       image: IMAGES.specialtyJamaican,
       imageAlt:
         "Jamaican jerk chicken and Caribbean dishes at Nico's Smokehouse Canggu",
+      href: "/caribbean-food-canggu-bali",
     },
     {
       title: "Texas BBQ",
@@ -157,6 +158,7 @@ export const specialties = {
       image: IMAGES.specialtyTexas,
       imageAlt:
         "Texas-style smoked brisket and ribs at Nico's Smokehouse Canggu",
+      href: "/texas-bbq-canggu-bali",
     },
     {
       title: "Peri Peri Fire",
@@ -166,6 +168,7 @@ export const specialties = {
       image: IMAGES.specialtyPeriPeri,
       imageAlt:
         "Flame-grilled peri peri chicken at Nico's Smokehouse Canggu",
+      href: "/peri-peri-chicken-canggu-bali",
     },
   ],
 };

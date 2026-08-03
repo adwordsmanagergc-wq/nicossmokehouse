@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Flame } from "lucide-react";
 import { specialties } from "@/lib/content";
 import Reveal from "./Reveal";
@@ -26,7 +27,11 @@ export default function Specialties() {
               delay={index * 120}
               className={index === 0 ? "col-span-2 md:col-span-1" : ""}
             >
-              <article className="group relative h-[240px] overflow-hidden rounded-xl md:h-[360px]">
+              <Link
+                href={card.href}
+                aria-label={`${card.title} — read more`}
+                className="group relative block h-[240px] overflow-hidden rounded-xl md:h-[360px]"
+              >
                 <Image
                   src={card.image}
                   alt={card.imageAlt}
@@ -52,7 +57,7 @@ export default function Specialties() {
                     aria-hidden="true"
                   />
                 </div>
-              </article>
+              </Link>
             </Reveal>
           ))}
         </div>
