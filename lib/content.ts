@@ -111,7 +111,7 @@ export const hero = {
   ctas: [
     {
       label: "View Our Menu",
-      href: links.gofood,
+      href: "/nicos-menu.pdf",
       icon: "utensils" as const,
       variant: "amber" as const,
       external: true,
