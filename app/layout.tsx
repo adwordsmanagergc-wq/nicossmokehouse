@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Bebas_Neue, Source_Sans_3 } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { site, seo, analytics, IMAGES } from "@/lib/content";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -85,6 +86,8 @@ gtag('config', '${analytics.googleAdsId}');`}
             </Script>
           </>
         ) : null}
+
+        <Analytics />
       </body>
     </html>
   );
