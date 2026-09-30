@@ -353,6 +353,6 @@ export const footer = {
     ],
   },
   copyright: "Nico's Smokehouse. All rights reserved.",
-  credit: "Website & Marketing by Metatap Pty Ltd",
+  credit: { label: "Website built by metatapdigital.com", href: "https://metatapdigital.com" },
   finalCta: { label: "Book a Table", href: links.whatsappBooking },
 };

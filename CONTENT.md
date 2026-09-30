@@ -118,7 +118,7 @@ CTA: **Book a Table**
 
 **Final CTA:** Book a Table
 **Copyright:** © (current year) Nico's Smokehouse. All rights reserved.
-**Credit:** Website & Marketing by Metatap Pty Ltd
+**Credit:** Website built by metatapdigital.com (links to https://metatapdigital.com)
 
 ---
 

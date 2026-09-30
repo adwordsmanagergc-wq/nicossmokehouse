@@ -29,9 +29,7 @@ components/
   Ticker.tsx         Slanted scrolling highlights band
   Story.tsx          "Three flags. One fire." — brand story + stats
   Specialties.tsx    "Three Fires, One Kitchen" — 3 cuisine cards
-  menu/MenuSection.tsx  Full tabbed menu + sauce bar (data: lib/menu.ts)
-  order/OrderContext.tsx  Order-tray state (saved in localStorage)
-  order/OrderTray.tsx     Slide-over tray → sends the order on WhatsApp
+  menu/MenuSection.tsx  Full menu (all categories) + sauce bar + PDF link (data: lib/menu.ts)
   Deal.tsx           12pm–5pm 10% off booking deal
   CateringTeaser.tsx Catering promo block
   Visit.tsx          Address, hours, live open status, map
