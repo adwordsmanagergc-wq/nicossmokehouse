@@ -4,6 +4,7 @@ import { SUBURB_LIST } from "@/lib/catering/suburbs";
 import { CUISINE_LIST } from "@/lib/catering/cuisines";
 
 const BLOG_SLUGS = [
+  "blog",
   "peri-peri-chicken-canggu-bali",
   "caribbean-food-canggu-bali",
   "texas-bbq-canggu-bali",

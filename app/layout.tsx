@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Bebas_Neue, Source_Sans_3 } from "next/font/google";
+import { Bebas_Neue, DM_Serif_Display, Source_Sans_3 } from "next/font/google";
 import { site, seo, analytics, IMAGES } from "@/lib/content";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import StickyBookButton from "@/components/StickyBookButton";
+import { OrderProvider } from "@/components/order/OrderContext";
+import OrderTray from "@/components/order/OrderTray";
 import "./globals.css";
 
 const display = Bebas_Neue({
@@ -18,6 +20,14 @@ const body = Source_Sans_3({
   weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-body",
+  display: "swap",
+});
+
+const serif = DM_Serif_Display({
+  weight: "400",
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  variable: "--font-serif",
   display: "swap",
 });
 
@@ -59,17 +69,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
-      <body className="font-body">
+    <html lang="en" className={`${display.variable} ${body.variable} ${serif.variable}`}>
+      <body className="bg-char pb-[76px] font-body md:pb-0">
         {/* Without JS the scroll-reveal wrappers must still show their content */}
         <noscript>
-          <style>{`.reveal{opacity:1!important;transform:none!important}`}</style>
+          <style>{`.reveal,.hero-in,.hero-photo{opacity:1!important;transform:none!important}`}</style>
         </noscript>
 
-        <Nav />
-        {children}
-        <Footer />
-        <StickyBookButton />
+        <OrderProvider>
+          <Nav />
+          {children}
+          <Footer />
+          <StickyBookButton />
+          <OrderTray />
+        </OrderProvider>
 
         {analytics.googleAdsId ? (
           <>
