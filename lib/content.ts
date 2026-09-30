@@ -176,7 +176,7 @@ export const story = {
     { value: "14+", label: "Hours on the smoker" },
     { value: "16", label: "House sauces" },
     { value: "11", label: "Tables · book ahead" },
-    { value: "4.8★", label: "From 150+ reviews" },
+    { value: "4.8★", label: "From 600+ reviews" },
   ],
 };
 
