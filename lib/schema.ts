@@ -1,4 +1,4 @@
-import { site, links, faq } from "./content";
+import { site, links, faq, IMAGES } from "./content";
 
 /**
  * Structured data (JSON-LD) for the homepage.
@@ -37,7 +37,7 @@ export function buildJsonLd(): string {
     closes: "00:00",
   };
 
-  const ogImage = `${site.url}/images/og-image.svg`;
+  const ogImage = `${site.url}${IMAGES.ogImage}`;
 
   const graph = [
     {
@@ -47,7 +47,7 @@ export function buildJsonLd(): string {
       alternateName: site.alternateName,
       description:
         "Canggu's best air-conditioned BBQ restaurant serving Texas-style smoked meats, authentic Caribbean & Jamaican cuisine, and Peri Peri chicken. Cool indoor dining with 11 tables. Open daily 12pm-midnight.",
-      image: [ogImage, `${site.url}/images/specialty-texas.svg`],
+      image: [ogImage, `${site.url}${IMAGES.specialtyTexas}`],
       url: site.url,
       telephone: site.telephone,
       priceRange: site.priceRange,
@@ -56,7 +56,7 @@ export function buildJsonLd(): string {
       geo,
       openingHoursSpecification: [openingHours],
       acceptsReservations: "True",
-      menu: links.gofood,
+      menu: `${site.url}/#menu`,
       amenityFeature: [
         { "@type": "LocationFeatureSpecification", name: "Air Conditioning", value: true },
         { "@type": "LocationFeatureSpecification", name: "Indoor Seating", value: true },

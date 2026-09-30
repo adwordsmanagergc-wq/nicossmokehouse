@@ -1,109 +1,189 @@
 import Image from "next/image";
-import { MapPin } from "lucide-react";
+import { ArrowDown, ArrowRight, FileText, MapPin, Utensils } from "lucide-react";
 import { hero, links, IMAGES } from "@/lib/content";
-import { ICONS } from "./icons";
+import OpenStatus from "./OpenStatus";
+import Embers from "./Embers";
 
-const CTA_VARIANTS: Record<string, string> = {
-  green:
-    "bg-gradient-to-b from-green-600 via-green-700 to-green-800 text-white border-t border-green-500/50 border-b-2 border-b-green-950",
-  amber:
-    "bg-gradient-to-b from-amber-700 via-amber-800 to-amber-900 text-amber-100 border-t border-amber-600/50 border-b-2 border-b-amber-950",
-  instagram:
-    "bg-gradient-to-r from-purple-600 via-pink-500 to-orange-400 text-white",
-  "green-bright":
-    "bg-gradient-to-r from-green-600 via-green-500 to-green-400 text-white",
-  grab: "bg-gradient-to-r from-[#00B14F] via-[#00A046] to-[#008A3C] text-white",
-};
+const BADGE_TEXT = "SMOKED LOW & SLOW · 14+ HOURS · CANGGU BALI · ";
 
 export default function Hero() {
   return (
-    <section
-      id="top"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden"
-    >
-      {/* Wooden-wall background with a darkening overlay for legibility */}
-      <div className="absolute inset-0">
+    <section id="top" className="relative isolate overflow-hidden bg-char">
+      {/* Background: the flag wall, deep in shadow */}
+      <div className="absolute inset-0 -z-10">
         <Image
           src={IMAGES.heroBg}
           alt={hero.bgAlt}
           fill
           priority
           sizes="100vw"
-          className="object-cover object-left md:object-center"
+          className="animate-slow-zoom object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/65" />
+        <div className="absolute inset-0 bg-gradient-to-r from-char via-char/85 to-char/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-char via-transparent to-char/70" />
+        <div className="absolute -bottom-40 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-fire/25 blur-[140px]" />
       </div>
+      <Embers />
+      <div className="grain absolute inset-0 -z-0" aria-hidden="true" />
 
-      {/* Faint rising smoke */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-        {[0, 1, 2, 3].map((i) => (
-          <div
-            key={i}
-            className="smoke-particle absolute h-48 w-48 rounded-full bg-white/5 blur-3xl"
-            style={{ left: `${18 + i * 20}%`, bottom: "8%", animationDelay: `${i * 1.2}s` }}
-          />
-        ))}
-      </div>
+      <div className="relative mx-auto grid min-h-[100svh] max-w-7xl items-center gap-12 px-4 pb-20 pt-28 md:px-6 lg:grid-cols-[1.1fr_1fr] lg:gap-8 lg:pt-24">
+        {/* Copy */}
+        <div className="relative z-10">
+          <div className="hero-in flex flex-wrap items-center gap-3" style={{ animationDelay: "0.05s" }}>
+            <OpenStatus />
+            <a
+              href={links.googleMapsDirections}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-cream/70 transition hover:text-fire"
+            >
+              <MapPin className="h-3.5 w-3.5 text-fire" aria-hidden="true" />
+              {hero.location}
+            </a>
+          </div>
 
-      <div className="relative z-10 mx-auto max-w-5xl px-4 pb-16 pt-28 text-center">
-        {/* Circular badge logo */}
-        <div className="mx-auto mb-8 h-44 w-44 md:h-60 md:w-60">
-          <Image
-            src={IMAGES.logo}
-            alt={hero.logoAlt}
-            width={240}
-            height={240}
-            priority
-            className="h-full w-full object-contain drop-shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
-          />
-        </div>
-
-        {/* Headline */}
-        <div className="mb-4 inline-block rounded-lg bg-black/50 px-6 py-3 backdrop-blur-sm md:px-8 md:py-4">
-          <h1 className="animate-pulse-subtle whitespace-nowrap bg-gradient-to-r from-orange-400 via-red-500 to-amber-500 bg-clip-text font-display text-4xl tracking-wider text-transparent md:text-7xl lg:text-8xl">
-            {hero.headline}
+          <h1 className="mt-7 font-display leading-[0.82] tracking-[0.01em] text-cream">
+            <span className="hero-in block text-[22vw] sm:text-[9rem] lg:text-[9rem] xl:text-[10.5rem]" style={{ animationDelay: "0.15s" }}>
+              Smoke.
+            </span>
+            <span className="hero-in block text-[22vw] sm:text-[9rem] lg:text-[9rem] xl:text-[10.5rem]" style={{ animationDelay: "0.3s" }}>
+              Fire.
+            </span>
+            <span
+              className="hero-in fire-text block text-[22vw] sm:text-[9rem] lg:text-[9rem] xl:text-[10.5rem]"
+              style={{ animationDelay: "0.45s" }}
+            >
+              Soul.
+            </span>
           </h1>
+
+          <p
+            className="hero-in mt-6 max-w-xl font-serif text-2xl italic leading-snug text-cream/90 md:text-3xl"
+            style={{ animationDelay: "0.6s" }}
+          >
+            {hero.subheadline}.
+          </p>
+
+          <div className="hero-in mt-9 flex flex-wrap items-center gap-3" style={{ animationDelay: "0.75s" }}>
+            <a
+              href={links.whatsappBooking}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2.5 rounded-full bg-fire px-7 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white shadow-[0_18px_50px_-12px_rgba(236,73,19,0.9)] transition hover:-translate-y-0.5 hover:bg-ember"
+            >
+              <Utensils className="h-4 w-4" aria-hidden="true" />
+              Book a Table
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+            </a>
+            <a
+              href="#menu"
+              className="inline-flex items-center gap-2.5 rounded-full border border-cream/25 bg-white/5 px-7 py-4 text-sm font-bold uppercase tracking-[0.14em] text-cream backdrop-blur-md transition hover:border-cream/60 hover:bg-white/10"
+            >
+              Explore the Menu
+              <ArrowDown className="h-4 w-4" aria-hidden="true" />
+            </a>
+          </div>
+
+          <div
+            className="hero-in mt-7 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-cream/60"
+            style={{ animationDelay: "0.9s" }}
+          >
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brown">Delivery</span>
+            <a
+              href={links.gofood}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-semibold text-cream/85 transition hover:text-[#00AA13]"
+            >
+              <span className="h-2 w-2 rounded-full bg-[#00AA13]" /> GoFood
+            </a>
+            <a
+              href={links.grab}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-semibold text-cream/85 transition hover:text-[#00B14F]"
+            >
+              <span className="h-2 w-2 rounded-full bg-[#00B14F]" /> GrabFood
+            </a>
+            <a
+              href="/nicos-menu.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 font-semibold text-cream/85 transition hover:text-fire"
+            >
+              <FileText className="h-4 w-4" aria-hidden="true" /> PDF Menu
+            </a>
+          </div>
         </div>
 
-        {/* Sub-headline */}
-        <p className="mx-auto mb-8 max-w-3xl rounded-lg border border-cream/20 bg-black/40 px-6 py-3 text-lg font-medium tracking-wide text-cream shadow-lg backdrop-blur-sm md:text-2xl lg:text-3xl">
-          {hero.subheadline}
-        </p>
+        {/* Photo stack */}
+        <div className="relative mx-auto h-[440px] w-full max-w-[560px] sm:h-[560px] lg:h-[640px]">
+          <div
+            className="hero-photo absolute right-0 top-0 h-[78%] w-[74%] overflow-hidden rounded-[28px] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.9)] ring-1 ring-white/10"
+            style={{ animationDelay: "0.35s" }}
+          >
+            <Image
+              src={IMAGES.specialtyTexas}
+              alt="Smoked beef short rib with a black peppery bark on a Nico's board"
+              fill
+              priority
+              sizes="(min-width: 1024px) 420px, 74vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+            <span className="absolute bottom-4 left-4 rounded-full bg-black/60 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-cream backdrop-blur">
+              Beef Short Rib
+            </span>
+          </div>
 
-        {/* Location pill */}
-        <a
-          href={links.googleMapsDirections}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group mb-10 inline-flex items-center gap-3 rounded-full border border-brown/40 bg-smoke/50 px-6 py-3 backdrop-blur-sm transition-colors hover:bg-smoke/70"
-        >
-          <MapPin className="h-5 w-5 text-fire" aria-hidden="true" />
-          <span className="text-sm tracking-wide text-cream/90">{hero.location}</span>
-          <span className="text-sm font-medium text-fire group-hover:underline">
-            {hero.directionsLabel}
-          </span>
-        </a>
+          <div
+            className="hero-photo absolute bottom-0 left-0 h-[56%] w-[52%] -rotate-3 overflow-hidden rounded-[24px] border-[6px] border-char shadow-[0_30px_60px_-15px_rgba(0,0,0,0.9)]"
+            style={{ animationDelay: "0.55s" }}
+          >
+            <Image
+              src={IMAGES.specialtyPeriPeri}
+              alt="Peri peri HOT sauce poured over flame-grilled chicken"
+              fill
+              priority
+              sizes="(min-width: 1024px) 300px, 52vw"
+              className="object-cover"
+            />
+            <span className="absolute bottom-3 left-3 rounded-full bg-black/60 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.2em] text-cream backdrop-blur">
+              Peri Peri
+            </span>
+          </div>
 
-        {/* CTAs — 2-column grid on mobile, row on larger screens */}
-        <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:justify-center sm:gap-4">
-          {hero.ctas.map((cta) => {
-            const Icon = cta.icon ? ICONS[cta.icon] : null;
-            return (
-              <a
-                key={cta.label}
-                href={cta.href}
-                {...(cta.external
-                  ? { target: "_blank", rel: "noopener noreferrer" }
-                  : {})}
-                className={`flex w-full items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold shadow-md transition-all duration-300 hover:brightness-110 sm:w-auto sm:min-w-[190px] ${CTA_VARIANTS[cta.variant]}`}
-              >
-                {Icon ? <Icon className="h-4 w-4" aria-hidden="true" /> : null}
-                {cta.label}
-              </a>
-            );
-          })}
+          {/* Rotating badge */}
+          <div className="hero-photo absolute bottom-[18%] right-[4%] h-32 w-32 sm:h-40 sm:w-40" style={{ animationDelay: "0.8s" }}>
+            <svg viewBox="0 0 200 200" className="absolute inset-0 h-full w-full animate-[spin_22s_linear_infinite]" aria-hidden="true">
+              <defs>
+                <path id="badge-circle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" />
+              </defs>
+              <circle cx="100" cy="100" r="98" fill="#EC4913" />
+              <text className="fill-white font-body text-[15px] font-bold tracking-[0.22em]">
+                <textPath href="#badge-circle">{BADGE_TEXT}</textPath>
+              </text>
+            </svg>
+            <Image
+              src={IMAGES.logo}
+              alt=""
+              width={120}
+              height={120}
+              className="absolute left-1/2 top-1/2 h-[56%] w-[56%] -translate-x-1/2 -translate-y-1/2 rounded-full"
+            />
+          </div>
         </div>
       </div>
+
+      {/* Scroll cue */}
+      <a
+        href="#story"
+        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.3em] text-cream/40 transition hover:text-cream lg:flex"
+        aria-label="Scroll to our story"
+      >
+        Scroll
+        <span className="h-10 w-px animate-pulse bg-gradient-to-b from-cream/60 to-transparent" />
+      </a>
     </section>
   );
 }

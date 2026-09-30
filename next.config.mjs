@@ -8,18 +8,9 @@ const nextConfig = {
     contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-  async redirects() {
-    return [
-      // Canonicalise www -> non-www with a hard 301.
-      // Prevents Google's "Duplicate without user-selected canonical" flag.
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.nicossmokehouse.com" }],
-        destination: "https://nicossmokehouse.com/:path*",
-        statusCode: 301,
-      },
-    ];
-  },
+  // www <-> non-www canonicalisation is handled in Vercel → Settings → Domains.
+  // Do NOT add a host redirect here too: combined with Vercel's own domain
+  // redirect it creates an infinite loop (ERR_TOO_MANY_REDIRECTS).
 };
 
 export default nextConfig;

@@ -19,15 +19,33 @@ const config: Config = {
         gold: "#FBBF24", // gold accent / highlights
         light: "#FAF9F5", // light-section background
         brown: "#93806C", // muted brown for borders / sub-text
+        paper: "#F3EEE6", // printed-menu paper
+        ink: "#16100A", // near-black type on paper
+        ember: "#FF8A1F", // bright ember highlight
       },
       fontFamily: {
         display: ["var(--font-display)", "Impact", "Haettenschweiler", "sans-serif"],
         body: ["var(--font-body)", "system-ui", "Segoe UI", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
       },
       keyframes: {
         marquee: {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(-50%)" },
+        },
+        "ember-rise": {
+          "0%": { transform: "translate3d(0,0,0) scale(1)", opacity: "0" },
+          "10%": { opacity: "1" },
+          "100%": { transform: "translate3d(var(--drift,20px),-100vh,0) scale(0.3)", opacity: "0" },
+        },
+        "slow-zoom": {
+          from: { transform: "scale(1.02)" },
+          to: { transform: "scale(1.12)" },
+        },
+        "tray-pop": {
+          "0%": { transform: "scale(1)" },
+          "40%": { transform: "scale(1.12)" },
+          "100%": { transform: "scale(1)" },
         },
         "pulse-subtle": {
           "0%, 100%": { filter: "drop-shadow(0 0 22px rgba(236,73,19,0.45))" },
@@ -35,6 +53,9 @@ const config: Config = {
         },
       },
       animation: {
+        "ember-rise": "ember-rise 7s linear infinite",
+        "slow-zoom": "slow-zoom 24s ease-in-out infinite alternate",
+        "tray-pop": "tray-pop 0.5s cubic-bezier(.2,1.6,.4,1)",
         marquee: "marquee 48s linear infinite",
         "marquee-sports": "marquee 32s linear infinite",
         "pulse-subtle": "pulse-subtle 3s ease-in-out infinite",

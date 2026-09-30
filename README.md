@@ -26,16 +26,24 @@ app/
 components/
   Nav.tsx            Fixed top navigation
   Hero.tsx           Hero — logo, headline, location pill, CTAs
+  Ticker.tsx         Slanted scrolling highlights band
+  Story.tsx          "Three flags. One fire." — brand story + stats
   Specialties.tsx    "Three Fires, One Kitchen" — 3 cuisine cards
-  MenuPreview.tsx    "From The Pit" — scrolling dish marquee
-  SportsBarFeature.tsx  "Coming Soon" Bintang Sports Bar block
-  FAQ.tsx            Frequently asked questions
+  menu/MenuSection.tsx  Full tabbed menu + sauce bar (data: lib/menu.ts)
+  order/OrderContext.tsx  Order-tray state (saved in localStorage)
+  order/OrderTray.tsx     Slide-over tray → sends the order on WhatsApp
+  Deal.tsx           12pm–5pm 10% off booking deal
+  CateringTeaser.tsx Catering promo block
+  Visit.tsx          Address, hours, live open status, map
+  OpenStatus.tsx     Live "Open now" pill (Bali time)
+  FAQ.tsx            Frequently asked questions (accordion)
   Footer.tsx         Footer — links, menus, copyright
   StickyBookButton.tsx  Floating "Book a Table" button
   Reveal.tsx         Scroll fade-up wrapper (only client component)
   icons.tsx          Icon-name → lucide component map
 lib/
   content.ts         ← ALL copy, links and image paths live here
+  menu.ts            ← The full menu & prices (from public/nicos-menu.pdf)
   schema.ts          JSON-LD structured data
 public/images/       Image assets (placeholders ship by default)
 scripts/

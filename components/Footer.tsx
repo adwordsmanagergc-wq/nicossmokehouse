@@ -1,35 +1,23 @@
 import Image from "next/image";
-import { ChevronDown, Instagram, Utensils } from "lucide-react";
-import { footer, IMAGES } from "@/lib/content";
+import Link from "next/link";
+import { Instagram, MapPin, Utensils } from "lucide-react";
+import { footer, links, site, visit, IMAGES } from "@/lib/content";
 import { ICONS } from "./icons";
 
-const ACTION_VARIANTS: Record<string, string> = {
-  green: "bg-green-600 text-white hover:bg-green-500",
-  fire: "bg-fire text-white hover:brightness-110",
-  wood: "border border-amber-700/50 bg-brown/40 text-cream hover:bg-brown/60",
-};
-
-/** Footer dropdown built on native <details> — no JavaScript, fully crawlable. */
-function FooterMenu({
-  label,
-  children,
-}: {
-  label: string;
-  children: React.ReactNode;
-}) {
+function Column({ title, items }: { title: string; items: { label: string; href: string }[] }) {
   return (
-    <details className="group">
-      <summary className="mx-auto flex w-fit cursor-pointer list-none items-center gap-2 text-sm text-cream/60 transition-colors hover:text-fire [&::-webkit-details-marker]:hidden">
-        <span>{label}</span>
-        <ChevronDown
-          className="h-4 w-4 transition-transform group-open:rotate-180"
-          aria-hidden="true"
-        />
-      </summary>
-      <div className="mx-auto mt-2 w-fit rounded-lg border border-brown/20 bg-black/60 px-4 py-2">
-        {children}
-      </div>
-    </details>
+    <div>
+      <p className="text-xs font-bold uppercase tracking-[0.25em] text-fire">{title}</p>
+      <ul className="mt-4 space-y-2.5">
+        {items.map((l) => (
+          <li key={l.href}>
+            <Link href={l.href} className="text-sm text-cream/65 transition-colors hover:text-cream">
+              {l.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
@@ -37,127 +25,90 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden border-t border-amber-900/50 px-4 py-16">
-      {/* Wooden-wall background */}
-      <div className="absolute inset-0">
-        <Image
-          src={IMAGES.heroBg}
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-black/55" />
-      </div>
-
-      <div className="relative mx-auto max-w-4xl text-center">
-        <div className="inline-block rounded-2xl bg-black/60 px-8 py-8 backdrop-blur-sm md:px-12 md:py-10">
-          <div className="mx-auto mb-6 h-20 w-20 overflow-hidden rounded-full">
-            <Image
-              src={IMAGES.logo}
-              alt={footer.logoAlt}
-              width={80}
-              height={80}
-              className="h-full w-full object-cover"
-            />
-          </div>
-
-          <p className="mb-6 text-brown">{footer.tagline}</p>
-
-          <div className="mb-6 flex justify-center">
-            <a
-              href={footer.instagram.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-cream/70 transition-colors hover:text-fire"
-            >
-              <Instagram className="h-5 w-5" aria-hidden="true" />
-              {footer.instagram.label}
-            </a>
-          </div>
-
-          {/* Primary action buttons */}
-          <div className="mb-6 flex flex-wrap justify-center gap-4">
-            {footer.actions.map((action) => {
-              const Icon = ICONS[action.icon];
-              return (
-                <a
-                  key={action.label}
-                  href={action.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-flex items-center gap-2 rounded-lg px-6 py-3 font-medium transition-colors ${ACTION_VARIANTS[action.variant]}`}
-                >
-                  <Icon className="h-5 w-5" aria-hidden="true" />
-                  {action.label}
-                </a>
-              );
-            })}
-          </div>
-
-          {/* Blogs + Catering link menus */}
-          <div className="mb-8 space-y-3">
-            <FooterMenu label={footer.blogs.label}>
-              <ul className="space-y-1">
-                {footer.blogs.links.map((link) => (
-                  <li key={link.href}>
-                    <a
-                      href={link.href}
-                      className="block px-2 py-1 text-sm text-cream/70 transition-colors hover:text-fire"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </FooterMenu>
-
-            <FooterMenu label={footer.catering.label}>
-              <p className="px-2 pb-1 pt-1 text-xs font-semibold uppercase tracking-wide text-brown">
-                Areas
-              </p>
-              <ul className="mb-2 grid grid-cols-2 gap-x-4">
-                {footer.catering.areas.map((area) => (
-                  <li key={area.href}>
-                    <a
-                      href={area.href}
-                      className="block px-2 py-1 text-sm text-cream/70 transition-colors hover:text-fire"
-                    >
-                      {area.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-              <ul className="space-y-1 border-t border-brown/20 pt-2">
-                {footer.catering.links.map((link) => (
-                  <li key={link.href}>
-                    <a
-                      href={link.href}
-                      className="block px-2 py-1 text-sm text-cream/70 transition-colors hover:text-fire"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </FooterMenu>
-          </div>
-
-          {/* Final Book a Table CTA */}
+    <footer className="relative overflow-hidden border-t border-white/5 bg-[#120c07] px-4 pb-28 pt-20 md:px-6 md:pb-10">
+      <div className="grain absolute inset-0" aria-hidden="true" />
+      <div className="relative mx-auto max-w-7xl">
+        {/* Big CTA */}
+        <div className="flex flex-col items-start justify-between gap-8 border-b border-white/10 pb-14 md:flex-row md:items-end">
+          <h2 className="font-display text-6xl leading-[0.88] text-cream md:text-[8rem]">
+            Hungry yet?
+            <br />
+            <span className="fire-text">Pull up a chair.</span>
+          </h2>
           <a
             href={footer.finalCta.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="mb-6 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-8 py-3 font-semibold text-white transition-all hover:scale-105 hover:bg-[#20bd5a]"
+            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#25D366] px-8 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition hover:-translate-y-0.5 hover:bg-[#20bd5a]"
           >
             <Utensils className="h-5 w-5" aria-hidden="true" />
             {footer.finalCta.label}
           </a>
+        </div>
 
-          <p className="text-sm text-brown/70">
+        <div className="grid gap-12 py-14 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+          <div>
+            <div className="flex items-center gap-4">
+              <Image
+                src={IMAGES.logo}
+                alt={footer.logoAlt}
+                width={72}
+                height={72}
+                className="h-16 w-16 rounded-full"
+              />
+              <div>
+                <p className="font-display text-3xl leading-none text-cream">{site.name}</p>
+                <p className="mt-1 text-sm text-brown">{footer.tagline}</p>
+              </div>
+            </div>
+            <a
+              href={links.googleMapsDirections}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 flex items-start gap-2 text-sm text-cream/65 transition hover:text-cream"
+            >
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-fire" aria-hidden="true" />
+              {visit.address}
+            </a>
+            <p className="mt-2 pl-6 text-sm text-cream/65">{visit.hours}</p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {footer.actions.map((action) => {
+                const Icon = ICONS[action.icon];
+                return (
+                  <a
+                    key={action.label}
+                    href={action.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-cream/80 transition hover:border-fire hover:text-fire"
+                  >
+                    <Icon className="h-4 w-4" aria-hidden="true" />
+                    {action.label}
+                  </a>
+                );
+              })}
+              <a
+                href={footer.instagram.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-cream/80 transition hover:border-fire hover:text-fire"
+              >
+                <Instagram className="h-4 w-4" aria-hidden="true" />
+                {footer.instagram.label}
+              </a>
+            </div>
+          </div>
+
+          <Column title={footer.blogs.label} items={footer.blogs.links} />
+          <Column title="Catering" items={footer.catering.links} />
+          <Column title="Catering Areas" items={footer.catering.areas} />
+        </div>
+
+        <div className="flex flex-col gap-2 border-t border-white/10 pt-8 text-xs text-brown/80 md:flex-row md:justify-between">
+          <p>
             &copy; {year} {footer.copyright}
           </p>
-          <p className="mt-3 text-xs text-brown/50">{footer.credit}</p>
+          <p>{footer.credit}</p>
         </div>
       </div>
     </footer>

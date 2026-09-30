@@ -93,7 +93,13 @@ export const seo = {
 //  NAVIGATION
 // -----------------------------------------------------------------------------
 export const nav = {
-  links: [] as { label: string; href: string }[],
+  links: [
+    { label: "Menu", href: "/#menu" },
+    { label: "Our Story", href: "/#story" },
+    { label: "Catering", href: "/catering-bali" },
+    { label: "Blog", href: "/blog" },
+    { label: "Visit", href: "/#visit" },
+  ],
   cta: { label: "Book a Table", href: links.whatsappBooking },
 };
 
@@ -142,11 +148,81 @@ export const hero = {
 };
 
 // -----------------------------------------------------------------------------
+//  HOMEPAGE SECTIONS
+// -----------------------------------------------------------------------------
+export const ticker = [
+  "US Prime Brisket",
+  "Smoked 14+ Hours",
+  "Jamaican Jerk Chicken",
+  "Curry Goat",
+  "Oxtail",
+  "Peri Peri Fire",
+  "Dino Ribs",
+  "Guinness Punch",
+  "Fully Air-Conditioned",
+  "Open Daily 12pm – 12am",
+];
+
+export const story = {
+  eyebrow: "OUR STORY",
+  heading: "Three flags. One fire.",
+  paragraphs: [
+    "Look closely at our wall and you'll find three flags burned into the timber — Texas, Jamaica and Portugal. They're the three fire traditions we cook by, and the reason there's nowhere else in Bali quite like Nico's.",
+    "Brisket goes on the smoker before sunrise and comes off 14+ hours later with a black, peppery bark. Jerk chicken is charred over open flame the Kingston way. Peri peri birds are basted and grilled until the skin blisters. Three cuisines, one kitchen — and every one of them cooked with real fire.",
+  ],
+  imageAlt:
+    "Texas, Jamaican and Portuguese flags painted on the wooden wall at Nico's Smokehouse Canggu",
+  stats: [
+    { value: "14+", label: "Hours on the smoker" },
+    { value: "16", label: "House sauces" },
+    { value: "11", label: "Tables · book ahead" },
+    { value: "4.8★", label: "From 150+ reviews" },
+  ],
+};
+
+export const deal = {
+  eyebrow: "LUNCH DEAL",
+  heading: "Book 12pm – 5pm, save 10%",
+  body: "Reserve a table for any time between 12pm and 5pm and we'll take 10% off your whole bill. Only 11 tables and the brisket sells out — so book early.",
+  cta: "Claim on WhatsApp",
+  href: "https://wa.me/6287867966662?text=Hi%20Nico's!%20I'd%20like%20to%20book%20a%20table%20between%2012pm%20and%205pm%20for%2010%25%20off",
+};
+
+export const cateringTeaser = {
+  eyebrow: "CATERING ACROSS BALI",
+  heading: "Bring the smoker to your villa.",
+  body: "Birthdays, weddings, retreats and villa parties — we cater Texas BBQ, Caribbean feasts and peri peri spreads everywhere from Canggu to Uluwatu.",
+  cuisines: [
+    { label: "Texas BBQ Catering", href: "/texas-bbq-catering-bali" },
+    { label: "Caribbean Catering", href: "/caribbean-catering-bali" },
+    { label: "Peri Peri Catering", href: "/peri-peri-catering-bali" },
+  ],
+};
+
+export const visit = {
+  eyebrow: "COME HUNGRY",
+  heading: "Find us in Canggu",
+  address: "Jl. Raya Canggu, Tibubeneng, Kuta Utara, Badung, Bali 80361",
+  hours: "Open daily · 12pm – 12am",
+  phoneLabel: "+62 878 6796 6662",
+  perks: [
+    "Fully air-conditioned indoor dining",
+    "Only 11 tables — bookings recommended",
+    "Family friendly, sharing platters",
+    "Delivery via GoFood & Grab",
+  ],
+  mapEmbed:
+    "https://www.google.com/maps?q=Nico's+Smokehouse,+Jl.+Raya+Canggu,+Tibubeneng,+Bali&output=embed",
+};
+
+// -----------------------------------------------------------------------------
 //  SPECIALTIES — "Three Fires, One Kitchen"
 // -----------------------------------------------------------------------------
 export const specialties = {
   eyebrow: "OUR SPECIALTIES",
   heading: "THREE FIRES, ONE KITCHEN",
+  intro:
+    "Pick a fire — or better yet, build a platter from all three.",
   cards: [
     {
       title: "Jamaican Soul",
@@ -157,6 +233,7 @@ export const specialties = {
       imageAlt:
         "Jamaican jerk chicken and Caribbean dishes at Nico's Smokehouse Canggu",
       href: "/caribbean-food-canggu-bali",
+      dishes: ["Jerk Chicken", "Curry Goat", "Oxtail", "Festivals"],
     },
     {
       title: "Texas BBQ",
@@ -167,6 +244,7 @@ export const specialties = {
       imageAlt:
         "Texas-style smoked brisket and ribs at Nico's Smokehouse Canggu",
       href: "/texas-bbq-canggu-bali",
+      dishes: ["Brisket", "Short Rib", "Dino Ribs", "US Prime Pork Ribs"],
     },
     {
       title: "Peri Peri Fire",
@@ -177,6 +255,7 @@ export const specialties = {
       imageAlt:
         "Flame-grilled peri peri chicken at Nico's Smokehouse Canggu",
       href: "/peri-peri-chicken-canggu-bali",
+      dishes: ["Whole / Half / Breast", "6 Peri Flavours", "Peri Burger"],
     },
   ],
 };
