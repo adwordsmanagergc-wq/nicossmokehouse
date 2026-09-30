@@ -1,6 +1,6 @@
 // =============================================================================
 //  MENU — transcribed from /public/nicos-menu.pdf. Prices are in thousands of
-//  IDR ("90" = 90K). Edit here and the homepage menu + order tray update.
+//  IDR ("90" = 90K). Edit here and the homepage menu updates.
 // =============================================================================
 
 export type MenuOption = { label: string; price: number };
@@ -11,7 +11,7 @@ export type MenuItem = {
   description?: string;
   /** Fixed price (K). Omit when the item uses `options` or `per100g`. */
   price?: number;
-  /** Size / portion choices, each separately orderable. */
+  /** Size / portion choices. */
   options?: MenuOption[];
   /** Price per 100g (K) — sold by weight. */
   per100g?: number;
@@ -21,7 +21,7 @@ export type MenuItem = {
   addOns?: MenuOption[];
   /** Short badge, e.g. "Pre-order 24h". */
   tag?: string;
-  /** Not orderable online (e.g. dessert of the day). */
+  /** No fixed price (e.g. dessert of the day). */
   askUs?: boolean;
 };
 
@@ -60,8 +60,6 @@ export const HOUSE_SAUCES = [
 export const EXTRA_SAUCE_PRICE = 10;
 export const TAX_NOTE =
   "An additional 11% government tax and 3% service charge will be added to the total bill.";
-/** 11% tax + 3% service, used for the order tray's estimate only. */
-export const TAX_MULTIPLIER = 1.14;
 
 const ADD_ONS: MenuOption[] = [
   { label: "Jerk/Peri Chicken", price: 30 },

@@ -108,7 +108,9 @@ export default function Footer() {
           <p>
             &copy; {year} {footer.copyright}
           </p>
-          <p>{footer.credit}</p>
+          <a href={footer.credit.href} target="_blank" rel="noopener" className="transition-colors hover:text-cream">
+            {footer.credit.label}
+          </a>
         </div>
       </div>
     </footer>

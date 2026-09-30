@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
-import { useRef, useState } from "react";
-import { Check, Download, Flame, Plus, ShoppingBag } from "lucide-react";
+import { FileText, Flame } from "lucide-react";
 import {
   MENU,
   HOUSE_SAUCES,
@@ -13,7 +10,8 @@ import {
   type MenuItem,
 } from "@/lib/menu";
 import { IMAGES } from "@/lib/content";
-import { useOrder } from "../order/OrderContext";
+
+const PDF_HREF = "/nicos-menu.pdf";
 
 const CATEGORY_IMAGES: Record<string, { src: string; alt: string }> = {
   pit: { src: IMAGES.specialtyTexas, alt: "Smoked beef short rib from the pit at Nico's Smokehouse" },
@@ -29,82 +27,53 @@ const HEAT: Record<string, number> = {
   "Piri Piri Extra Hot": 3,
 };
 
-function AddButton({
-  label,
-  price,
-  onAdd,
-  suffix,
-}: {
-  label?: string;
-  price: number;
-  onAdd: () => void;
-  suffix?: string;
-}) {
-  const [added, setAdded] = useState(false);
-  const timer = useRef<number>();
-  return (
-    <button
-      type="button"
-      onClick={() => {
-        onAdd();
-        setAdded(true);
-        window.clearTimeout(timer.current);
-        timer.current = window.setTimeout(() => setAdded(false), 1100);
-      }}
-      className={`group/add inline-flex items-center gap-2 rounded-full border py-1.5 pl-3 pr-1.5 text-sm font-bold transition ${
-        added
-          ? "border-emerald-700 bg-emerald-700 text-white"
-          : "border-ink/15 bg-white/70 text-ink hover:border-fire hover:bg-fire hover:text-white"
-      }`}
-      aria-label={`Add ${label ? label + " " : ""}${formatK(price)}${suffix ?? ""} to order`}
-    >
-      {label ? <span className="font-semibold">{label}</span> : null}
-      <span className={label ? "opacity-70" : ""}>
-        {formatK(price)}
-        {suffix}
-      </span>
-      <span
-        className={`flex h-6 w-6 items-center justify-center rounded-full transition ${
-          added ? "bg-white/20" : "bg-ink text-paper group-hover/add:bg-white group-hover/add:text-fire"
-        }`}
-      >
-        {added ? <Check className="h-3.5 w-3.5" /> : <Plus className="h-3.5 w-3.5" />}
-      </span>
-    </button>
-  );
+function priceLabel(item: MenuItem): string {
+  if (item.askUs) return "Ask us";
+  if (item.per100g) return `${formatK(item.per100g)} / 100g`;
+  if (item.price !== undefined) return formatK(item.price);
+  if (item.options?.length === 1) return formatK(item.options[0].price);
+  return "";
 }
 
 function MenuRow({ item }: { item: MenuItem }) {
-  const { add } = useOrder();
-  const single = item.price !== undefined && !item.options && !item.askUs;
-  const choice = item.choice ? { ...item.choice, value: item.choice.values[0] } : undefined;
-
+  const multi = item.options && item.options.length > 1;
   return (
-    <li className="group border-b border-ink/10 py-5 last:border-b-0">
+    <li className="break-inside-avoid border-b border-ink/10 py-5">
       <div className="flex items-baseline">
-        <h4 className="font-display text-[28px] leading-none tracking-[0.02em] text-ink md:text-[30px]">
+        <h4 className="font-display text-[26px] leading-none tracking-[0.02em] text-ink md:text-[28px]">
           {item.name}
+          {item.options?.length === 1 ? (
+            <span className="ml-2 font-body text-sm font-semibold tracking-normal text-ink/50">
+              {item.options[0].label}
+            </span>
+          ) : null}
         </h4>
         {item.tag ? (
           <span className="ml-3 shrink-0 -translate-y-1 rounded-full bg-fire/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.15em] text-fire">
             {item.tag}
           </span>
         ) : null}
-        <span className="leader" aria-hidden="true" />
-        <span className="shrink-0 font-display text-2xl text-ink">
-          {item.askUs
-            ? "Ask us"
-            : item.per100g
-              ? `${formatK(item.per100g)} / 100g`
-              : item.price !== undefined
-                ? formatK(item.price)
-                : item.options && item.options.length > 1
-                  ? `from ${formatK(Math.min(...item.options.map((o) => o.price)))}`
-                  : item.options
-                    ? formatK(item.options[0].price)
-                    : ""}
-        </span>
+        {!multi ? (
+          <>
+            <span className="leader" aria-hidden="true" />
+            <span className="shrink-0 font-display text-2xl text-ink">{priceLabel(item)}</span>
+          </>
+        ) : null}
       </div>
+
+      {multi ? (
+        <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 font-display text-xl tracking-[0.02em] text-ink">
+          {item.options!.map((o) => (
+            <span key={o.label}>
+              <span className="font-body text-sm font-semibold uppercase tracking-[0.08em] text-ink/55">
+                {o.label}
+              </span>{" "}
+              {formatK(o.price)}
+            </span>
+          ))}
+        </p>
+      ) : null}
+
       {item.description ? (
         <p className="mt-1.5 max-w-xl text-[15px] leading-relaxed text-ink/65">{item.description}</p>
       ) : null}
@@ -113,75 +82,16 @@ function MenuRow({ item }: { item: MenuItem }) {
           {item.choice.label}: {item.choice.values.join(" · ")}
         </p>
       ) : null}
-
-      {!item.askUs ? (
-        <div className="mt-3 flex flex-wrap gap-2">
-          {item.per100g ? (
-            <AddButton
-              label="+100g"
-              price={item.per100g}
-              onAdd={() =>
-                add({ key: item.id, name: item.name, variant: "100g", unitPrice: item.per100g!, byWeight: true })
-              }
-            />
-          ) : null}
-          {single ? (
-            <AddButton
-              price={item.price!}
-              onAdd={() => add({ key: item.id, name: item.name, unitPrice: item.price!, choice })}
-            />
-          ) : null}
-          {item.options?.map((opt) => (
-            <AddButton
-              key={opt.label}
-              label={opt.label}
-              price={opt.price}
-              onAdd={() =>
-                add({
-                  key: `${item.id}|${opt.label}`,
-                  name: item.name,
-                  variant: opt.label,
-                  unitPrice: opt.price,
-                  choice,
-                })
-              }
-            />
-          ))}
-          {item.addOns?.map((addOn) => (
-            <button
-              key={addOn.label}
-              type="button"
-              onClick={() =>
-                add({
-                  key: `${item.id}+${addOn.label}`,
-                  name: `${item.name} add-on`,
-                  variant: addOn.label,
-                  unitPrice: addOn.price,
-                })
-              }
-              className="inline-flex items-center gap-1 rounded-full border border-dashed border-ink/25 px-3 py-1.5 text-xs font-semibold text-ink/70 transition hover:border-fire hover:text-fire"
-            >
-              <Plus className="h-3 w-3" aria-hidden="true" />
-              {addOn.label} {formatK(addOn.price)}
-            </button>
-          ))}
-        </div>
+      {item.addOns ? (
+        <p className="mt-1 text-xs font-bold uppercase tracking-[0.12em] text-fire">
+          Add: {item.addOns.map((a) => `${a.label} ${formatK(a.price)}`).join(" · ")}
+        </p>
       ) : null}
     </li>
   );
 }
 
 export default function MenuSection() {
-  const [active, setActive] = useState(MENU[0].id);
-  const { count, subtotal, setOpen } = useOrder();
-  const topRef = useRef<HTMLDivElement>(null);
-
-  const select = (id: string) => {
-    setActive(id);
-    const top = topRef.current?.getBoundingClientRect().top ?? 0;
-    if (top < 0) topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   return (
     <section id="menu" className="paper relative px-4 pb-24 pt-24 text-ink md:px-6 md:pb-32 md:pt-32">
       {/* Torn edge */}
@@ -206,8 +116,8 @@ export default function MenuSection() {
               The Menu
             </h2>
             <p className="mt-5 max-w-xl font-serif text-2xl italic leading-snug text-ink/75">
-              Tap <span className="not-italic">＋</span> to build your order, then send it straight to us on WhatsApp —
-              for pickup, delivery or waiting at your table.
+              Smoked low &amp; slow, grilled over fire, served with island soul. Build a platter from the pit and
+              add your sides.
             </p>
           </div>
           <div className="flex flex-col items-start gap-3 lg:items-end">
@@ -219,70 +129,73 @@ export default function MenuSection() {
               className="hidden h-32 w-32 rotate-[-8deg] rounded-full opacity-90 mix-blend-multiply lg:block"
             />
             <a
-              href="/nicos-menu.pdf"
+              href={PDF_HREF}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border-2 border-ink px-5 py-2.5 text-sm font-bold uppercase tracking-[0.12em] transition hover:bg-ink hover:text-paper"
+              className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-bold uppercase tracking-[0.12em] text-paper transition hover:bg-fire"
             >
-              <Download className="h-4 w-4" aria-hidden="true" /> Printable PDF menu
+              <FileText className="h-4 w-4" aria-hidden="true" /> Open PDF menu
             </a>
           </div>
         </div>
 
-        {/* Tabs */}
-        <div ref={topRef} className="sticky top-16 z-20 -mx-4 mt-12 scroll-mt-20 md:top-[72px] md:-mx-6">
-          <div className="border-y-2 border-ink bg-paper/95 backdrop-blur">
-            <div
-              role="tablist"
-              aria-label="Menu categories"
-              className="scrollbar-hide mx-auto flex max-w-7xl gap-1 overflow-x-auto px-4 py-2.5 md:px-6"
+        {/* Jump links */}
+        <nav
+          aria-label="Menu sections"
+          className="sticky top-16 z-20 -mx-4 mt-12 border-y-2 border-ink bg-paper/95 backdrop-blur md:top-[72px] md:-mx-6"
+        >
+          <div className="scrollbar-hide mx-auto flex max-w-7xl gap-1 overflow-x-auto px-4 py-2.5 md:px-6">
+            {MENU.map((cat) => (
+              <a
+                key={cat.id}
+                href={`#menu-${cat.id}`}
+                className="shrink-0 rounded-full px-4 py-2 font-display text-xl tracking-[0.06em] text-ink/60 transition hover:bg-ink hover:text-paper md:text-2xl"
+              >
+                {cat.name}
+              </a>
+            ))}
+            <a
+              href="#menu-sauces"
+              className="shrink-0 rounded-full px-4 py-2 font-display text-xl tracking-[0.06em] text-ink/60 transition hover:bg-ink hover:text-paper md:text-2xl"
             >
-              {MENU.map((cat) => (
-                <button
-                  key={cat.id}
-                  type="button"
-                  role="tab"
-                  id={`tab-${cat.id}`}
-                  aria-selected={active === cat.id}
-                  aria-controls={`panel-${cat.id}`}
-                  onClick={() => select(cat.id)}
-                  className={`shrink-0 rounded-full px-4 py-2 font-display text-xl tracking-[0.06em] transition md:text-2xl ${
-                    active === cat.id ? "bg-ink text-paper" : "text-ink/60 hover:bg-ink/5 hover:text-ink"
-                  }`}
-                >
-                  {cat.name}
-                </button>
-              ))}
-            </div>
+              Sauces
+            </a>
           </div>
-        </div>
+        </nav>
 
-        {/* Panels — all rendered for SEO; inactive ones hidden */}
+        {/* Categories */}
         {MENU.map((cat) => {
           const img = CATEGORY_IMAGES[cat.id];
           return (
-            <div
+            <section
               key={cat.id}
-              id={`panel-${cat.id}`}
-              role="tabpanel"
-              aria-labelledby={`tab-${cat.id}`}
-              hidden={active !== cat.id}
-              className="menu-panel pt-12"
+              id={`menu-${cat.id}`}
+              aria-labelledby={`menu-${cat.id}-title`}
+              className="scroll-mt-36 border-b-2 border-ink py-14 last-of-type:border-b-0 md:py-20"
             >
-              <div className={`grid gap-12 ${img ? "lg:grid-cols-[1fr_380px]" : ""}`}>
+              <div className="grid gap-10 lg:grid-cols-[340px_1fr] lg:gap-16">
                 <div>
-                  <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                    <h3 className="font-display text-6xl leading-none md:text-7xl">{cat.name}</h3>
+                  <div className="lg:sticky lg:top-44">
                     <span className="font-serif text-2xl italic text-fire">{cat.kicker}</span>
+                    <h3 id={`menu-${cat.id}-title`} className="mt-1 font-display text-6xl leading-[0.9] md:text-7xl">
+                      {cat.name}
+                    </h3>
+                    {cat.note ? (
+                      <p className="mt-4 text-sm font-semibold uppercase leading-relaxed tracking-[0.08em] text-ink/55">
+                        {cat.note}
+                      </p>
+                    ) : null}
+                    {img ? (
+                      <div className="relative mt-8 hidden aspect-[4/5] overflow-hidden rounded-[24px] shadow-[0_30px_60px_-25px_rgba(22,16,10,0.6)] lg:block">
+                        <Image src={img.src} alt={img.alt} fill sizes="340px" className="object-cover" />
+                      </div>
+                    ) : null}
                   </div>
-                  {cat.note ? (
-                    <p className="mt-3 max-w-2xl text-sm font-semibold uppercase leading-relaxed tracking-[0.08em] text-ink/55">
-                      {cat.note}
-                    </p>
-                  ) : null}
+                </div>
 
+                <div>
                   {cat.groups.map((group, gi) => (
-                    <div key={gi} className="mt-8">
+                    <div key={gi} className={gi > 0 ? "mt-10" : ""}>
                       {group.title ? (
                         <div className="mb-1 flex items-center gap-4">
                           <h4 className="text-xs font-bold uppercase tracking-[0.3em] text-fire">{group.title}</h4>
@@ -290,7 +203,7 @@ export default function MenuSection() {
                         </div>
                       ) : null}
                       {group.note ? <p className="mb-2 text-sm text-ink/55">{group.note}</p> : null}
-                      <ul className={`${img ? "" : "md:grid md:grid-cols-2 md:gap-x-14"}`}>
+                      <ul className={group.items.length > 3 ? "md:columns-2 md:gap-x-12" : ""}>
                         {group.items.map((item) => (
                           <MenuRow key={item.id} item={item} />
                         ))}
@@ -298,24 +211,13 @@ export default function MenuSection() {
                     </div>
                   ))}
                 </div>
-
-                {img ? (
-                  <div className="hidden lg:block">
-                    <div className="sticky top-44">
-                      <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] shadow-[0_30px_60px_-25px_rgba(22,16,10,0.6)]">
-                        <Image src={img.src} alt={img.alt} fill sizes="380px" className="object-cover" />
-                      </div>
-                      <p className="mt-3 text-center font-serif text-lg italic text-ink/60">{img.alt}</p>
-                    </div>
-                  </div>
-                ) : null}
               </div>
-            </div>
+            </section>
           );
         })}
 
         {/* Sauce bar */}
-        <div className="mt-16 overflow-hidden rounded-[32px] bg-ink p-8 text-cream md:p-12">
+        <div id="menu-sauces" className="mt-6 scroll-mt-36 overflow-hidden rounded-[32px] bg-ink p-8 text-cream md:p-12">
           <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr]">
             <div>
               <p className="text-xs font-bold tracking-[0.3em] text-ember">THE SAUCE BAR</p>
@@ -325,7 +227,7 @@ export default function MenuSection() {
                 <span className="fire-text">Pick your heat.</span>
               </h3>
               <p className="mt-4 max-w-sm text-cream/65">
-                Every pit order comes with a choice of 1 sauce. Extra sauces {formatK(EXTRA_SAUCE_PRICE)} each.
+                Platters from the pit come with a choice of 1 sauce. Extra sauces {formatK(EXTRA_SAUCE_PRICE)} each.
               </p>
             </div>
             <div className="space-y-8">
@@ -372,16 +274,14 @@ export default function MenuSection() {
 
         <div className="mt-8 flex flex-col items-center justify-between gap-5 border-t-2 border-ink pt-6 md:flex-row">
           <p className="text-center text-xs font-bold uppercase tracking-[0.14em] text-ink/60 md:text-left">{TAX_NOTE}</p>
-          {count > 0 ? (
-            <button
-              type="button"
-              onClick={() => setOpen(true)}
-              className="inline-flex shrink-0 items-center gap-2 rounded-full bg-fire px-6 py-3 text-sm font-bold uppercase tracking-[0.12em] text-white transition hover:bg-ember"
-            >
-              <ShoppingBag className="h-4 w-4" aria-hidden="true" />
-              Review order · {formatK(subtotal)}
-            </button>
-          ) : null}
+          <a
+            href={PDF_HREF}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex shrink-0 items-center gap-2 rounded-full border-2 border-ink px-6 py-3 text-sm font-bold uppercase tracking-[0.12em] transition hover:bg-ink hover:text-paper"
+          >
+            <FileText className="h-4 w-4" aria-hidden="true" /> View PDF menu
+          </a>
         </div>
       </div>
     </section>

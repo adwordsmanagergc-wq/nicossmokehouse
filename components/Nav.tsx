@@ -3,9 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Menu, ShoppingBag, Utensils, X } from "lucide-react";
+import { Menu, Utensils, X } from "lucide-react";
 import { nav, site, IMAGES, links } from "@/lib/content";
-import { useOrder } from "./order/OrderContext";
 
 /**
  * Fixed top navigation. Transparent over the hero, turning solid once the
@@ -14,7 +13,6 @@ import { useOrder } from "./order/OrderContext";
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { count, setOpen } = useOrder();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -76,19 +74,6 @@ export default function Nav() {
         </div>
 
         <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => setOpen(true)}
-            className="relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-cream transition hover:border-fire hover:text-fire"
-            aria-label={`Your order${count ? `, ${count} items` : ""}`}
-          >
-            <ShoppingBag className="h-[18px] w-[18px]" aria-hidden="true" />
-            {count > 0 ? (
-              <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-fire px-1 text-[11px] font-bold text-white">
-                {count}
-              </span>
-            ) : null}
-          </button>
 
           <a
             href={nav.cta.href}

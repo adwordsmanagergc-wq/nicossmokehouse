@@ -42,11 +42,6 @@ const config: Config = {
           from: { transform: "scale(1.02)" },
           to: { transform: "scale(1.12)" },
         },
-        "tray-pop": {
-          "0%": { transform: "scale(1)" },
-          "40%": { transform: "scale(1.12)" },
-          "100%": { transform: "scale(1)" },
-        },
         "pulse-subtle": {
           "0%, 100%": { filter: "drop-shadow(0 0 22px rgba(236,73,19,0.45))" },
           "50%": { filter: "drop-shadow(0 0 42px rgba(251,191,36,0.7))" },
@@ -55,7 +50,6 @@ const config: Config = {
       animation: {
         "ember-rise": "ember-rise 7s linear infinite",
         "slow-zoom": "slow-zoom 24s ease-in-out infinite alternate",
-        "tray-pop": "tray-pop 0.5s cubic-bezier(.2,1.6,.4,1)",
         marquee: "marquee 48s linear infinite",
         "marquee-sports": "marquee 32s linear infinite",
         "pulse-subtle": "pulse-subtle 3s ease-in-out infinite",

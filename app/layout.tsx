@@ -5,8 +5,6 @@ import { site, seo, analytics, IMAGES } from "@/lib/content";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import StickyBookButton from "@/components/StickyBookButton";
-import { OrderProvider } from "@/components/order/OrderContext";
-import OrderTray from "@/components/order/OrderTray";
 import "./globals.css";
 
 const display = Bebas_Neue({
@@ -76,13 +74,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <style>{`.reveal,.hero-in,.hero-photo{opacity:1!important;transform:none!important}`}</style>
         </noscript>
 
-        <OrderProvider>
-          <Nav />
-          {children}
-          <Footer />
-          <StickyBookButton />
-          <OrderTray />
-        </OrderProvider>
+        <Nav />
+        {children}
+        <Footer />
+        <StickyBookButton />
 
         {analytics.googleAdsId ? (
           <>
