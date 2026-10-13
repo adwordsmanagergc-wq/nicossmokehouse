@@ -377,7 +377,7 @@ app.get("*", async (c) => {
           <p>BBQ & Grill - Canggu, Bali</p>
           <p>Texas BBQ • Caribbean Soul Food • Peri Peri</p>
           <p>Open Daily: 12pm - 12am</p>
-          <p>Location: Jl. Pantai Berawa No.99, Tibubeneng, Canggu</p>
+          <p>Location: Jl. Raya Canggu, Tibubeneng, Kec. Kuta Utara, Kabupaten Badung, Bali 80361</p>
           <p><a href="https://wa.me/6287867966662">Contact us on WhatsApp</a></p>
         </body>
       </html>

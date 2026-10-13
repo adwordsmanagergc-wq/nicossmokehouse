@@ -17,9 +17,10 @@ const schemaMarkup = {
       "telephone": "+6287867966662",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Tibubeneng",
-        "addressLocality": "Canggu",
+        "streetAddress": "Jl. Raya Canggu, Tibubeneng, Kec. Kuta Utara",
+        "addressLocality": "Kabupaten Badung",
         "addressRegion": "Bali",
+        "postalCode": "80361",
         "addressCountry": "ID"
       },
       "geo": {
@@ -492,7 +493,7 @@ export default function BestBBQCanggu() {
                   <MapPin className="w-6 h-6 text-amber-400 flex-shrink-0 mt-1" />
                   <div>
                     <p className="text-white font-semibold">Address</p>
-                    <p className="text-stone-400">Tibubeneng, Canggu, Bali, Indonesia</p>
+                    <p className="text-stone-400">Jl. Raya Canggu, Tibubeneng, Kec. Kuta Utara, Kabupaten Badung, Bali 80361</p>
                     <p className="text-stone-500 text-sm mt-1">Near Berawa, Batu Bolong, Pererenan</p>
                   </div>
                 </div>

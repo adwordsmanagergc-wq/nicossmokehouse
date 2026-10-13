@@ -12,7 +12,7 @@ export const periPeriPost = {
     "Nico's Smokehouse serves authentic flame-grilled Peri Peri chicken in Canggu with 6 signature sauces from Lemon & Herb to Extra Hot. Open daily 12pm-midnight.",
   subtitle:
     "Authentic Portuguese-African peri peri, flame-grilled fresh in Canggu.",
-  meta: `${site.name} · ${site.address.locality}, ${site.address.region} · Open 12pm – 12am Daily`,
+  meta: `${site.name} · ${site.area}, ${site.address.region} · Open 12pm – 12am Daily`,
   hero: {
     image: IMAGES.heroBg,
     alt: "Rustic wooden interior of Nico's Smokehouse, Canggu",
@@ -129,7 +129,7 @@ export const periPeriPost = {
   closing: {
     heading: "Visit Nico's Smokehouse",
     lines: [
-      { label: "Location", value: "Jalan Raya Canggu, Tibubeneng, Canggu, Bali" },
+      { label: "Location", value: site.address.full },
       { label: "Hours", value: "12pm – 12am Daily" },
       { label: "Cuisines", value: "Peri Peri, Texas BBQ, Caribbean, Jamaican" },
     ],

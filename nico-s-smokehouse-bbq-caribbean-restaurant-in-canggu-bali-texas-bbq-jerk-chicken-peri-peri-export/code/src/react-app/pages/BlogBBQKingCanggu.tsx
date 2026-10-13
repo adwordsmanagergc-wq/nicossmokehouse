@@ -304,7 +304,7 @@ export default function BlogBBQKingCanggu() {
           <section className="text-center">
             <h3 className="text-xl font-bold text-white mb-4">📍 Find Us</h3>
             <p className="text-stone-300 mb-2">
-              Jl. Pantai Berawa No.99, Tibubeneng, Canggu, Bali
+              Jl. Raya Canggu, Tibubeneng, Kec. Kuta Utara, Kabupaten Badung, Bali 80361
             </p>
             <p className="text-stone-400">
               Open Daily: 12pm – 12am

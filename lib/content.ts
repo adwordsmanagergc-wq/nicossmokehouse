@@ -31,9 +31,13 @@ export const site = {
   priceRange: "$$",
   tagline: "Authentic BBQ & Caribbean Cuisine in Bali",
   openingHours: "Open daily 12pm – 12am",
+  // Neighbourhood name used in display copy (e.g. "Canggu, Bali").
+  area: "Canggu",
+  // NAP: must match the Google Business Profile character-for-character.
   address: {
-    streetAddress: "Jl. Raya Canggu, Tibubeneng",
-    locality: "Canggu",
+    full: "Jl. Raya Canggu, Tibubeneng, Kec. Kuta Utara, Kabupaten Badung, Bali 80361",
+    streetAddress: "Jl. Raya Canggu, Tibubeneng, Kec. Kuta Utara",
+    locality: "Kabupaten Badung",
     region: "Bali",
     postalCode: "80361",
     country: "ID",
@@ -202,7 +206,7 @@ export const cateringTeaser = {
 export const visit = {
   eyebrow: "COME HUNGRY",
   heading: "Find us in Canggu",
-  address: "Jl. Raya Canggu, Tibubeneng, Kuta Utara, Badung, Bali 80361",
+  address: site.address.full,
   hours: "Open daily · 12pm – 12am",
   phoneLabel: "+62 878 6796 6662",
   perks: [

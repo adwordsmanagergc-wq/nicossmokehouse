@@ -84,7 +84,7 @@ Beef ribs (short ribs, dino ribs) are larger, meatier, and have an intense beefy
 
 ## Visit Nico's Smokehouse
 
-**Location:** Jalan Raya Canggu, Tibubeneng, Canggu, Bali  
+**Location:** Jl. Raya Canggu, Tibubeneng, Kec. Kuta Utara, Kabupaten Badung, Bali 80361  
 **Hours:** 12pm – 12am Daily  
 **Cuisines:** Texas BBQ, Caribbean, Jamaican, Peri Peri  
 

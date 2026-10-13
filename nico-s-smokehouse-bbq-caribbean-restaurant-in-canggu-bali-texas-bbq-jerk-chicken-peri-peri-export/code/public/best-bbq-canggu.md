@@ -99,7 +99,7 @@ Nico's Smokehouse is open daily from 12pm to midnight (12:00 - 00:00). We serve 
 
 ## Location
 
-**Address:** Tibubeneng, Canggu, Bali, Indonesia  
+**Address:** Jl. Raya Canggu, Tibubeneng, Kec. Kuta Utara, Kabupaten Badung, Bali 80361  
 **Nearby areas:** Berawa, Batu Bolong, Pererenan, Echo Beach
 
 **Opening Hours:** Daily 12pm – 12am  

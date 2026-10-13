@@ -9,7 +9,7 @@ export const caribbeanFoodPost = {
     "Nico's Smokehouse in Canggu serves authentic Jamaican jerk chicken, curry goat, oxtail and Caribbean soul food. The only real Caribbean restaurant in Bali.",
   subtitle:
     "Craving authentic jerk chicken, curry goat, or oxtail in Bali? Discover the rich flavors of the Caribbean at Nico's Smokehouse.",
-  meta: `${site.name} · ${site.address.locality}, ${site.address.region} · Open 12pm – 12am Daily`,
+  meta: `${site.name} · ${site.area}, ${site.address.region} · Open 12pm – 12am Daily`,
   hero: {
     image: IMAGES.heroBg,
     alt: "Caribbean cuisine and warm interior at Nico's Smokehouse, Canggu Bali",
@@ -144,7 +144,7 @@ export const caribbeanFoodPost = {
   closing: {
     heading: "Visit Nico's Smokehouse",
     lines: [
-      { label: "Location", value: "Jalan Raya Canggu, Tibubeneng, Canggu, Bali" },
+      { label: "Location", value: site.address.full },
       { label: "Hours", value: "12pm – 12am Daily" },
       { label: "Cuisines", value: "Caribbean, Jamaican, Texas BBQ, Peri Peri" },
     ],

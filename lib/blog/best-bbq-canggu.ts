@@ -9,7 +9,7 @@ export const bestBbqPost = {
     "Nico's Smokehouse — the best BBQ in Canggu. 14-hour smoked brisket, US Prime pork ribs, jerk chicken and peri peri. Book a table or catering.",
   subtitle:
     "Premium slow-smoked BBQ, unforgettable flavours, and one of Canggu's most talked-about dining experiences.",
-  meta: `${site.name} · ${site.address.locality}, ${site.address.region} · Open 12pm – 12am Daily`,
+  meta: `${site.name} · ${site.area}, ${site.address.region} · Open 12pm – 12am Daily`,
   hero: {
     image: IMAGES.heroBg,
     alt: "Wood-fired smoker and premium meats at Nico's Smokehouse, Canggu Bali",
@@ -128,7 +128,7 @@ export const bestBbqPost = {
   closing: {
     heading: "Book Your Table",
     lines: [
-      { label: "Address", value: "Tibubeneng, Canggu, Bali, Indonesia" },
+      { label: "Address", value: site.address.full },
       { label: "Nearby", value: "Berawa, Batu Bolong, Pererenan, Echo Beach" },
       { label: "Hours", value: "Daily 12pm – 12am" },
       { label: "Lunch Special", value: "10% off reservations 12pm – 5pm" },

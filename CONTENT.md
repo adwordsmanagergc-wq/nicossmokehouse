@@ -15,7 +15,7 @@ Every text string on the site, in one place for proofreading and copy edits.
 | Name         | Nico's Smokehouse |
 | URL          | https://nicossmokehouse.com |
 | Telephone    | +62-878-6796-6662 |
-| Address      | Jl. Raya Canggu, Tibubeneng, Canggu, Bali 80361, ID |
+| Address      | Jl. Raya Canggu, Tibubeneng, Kec. Kuta Utara, Kabupaten Badung, Bali 80361 |
 | Opening hours| Open daily 12pm – 12am |
 | Price range  | $$ |
 | Tagline      | Authentic BBQ & Caribbean Cuisine in Bali |
@@ -41,7 +41,7 @@ Every text string on the site, in one place for proofreading and copy edits.
 | GoFood ordering   | https://gofood.co.id/bali/restaurant/nico-s-smokehouse-tibubeneng-29af8618-1b2e-4d45-8522-e5c673344d15 |
 | WhatsApp booking  | https://wa.me/6287867966662 |
 | WhatsApp catering | https://wa.me/6287867966662?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20catering |
-| Google Maps       | Directions to Jl. Raya Canggu, Tibubeneng, Bali 80361 |
+| Google Maps       | Directions to Jl. Raya Canggu, Tibubeneng, Kec. Kuta Utara, Kabupaten Badung, Bali 80361 |
 
 ---
 

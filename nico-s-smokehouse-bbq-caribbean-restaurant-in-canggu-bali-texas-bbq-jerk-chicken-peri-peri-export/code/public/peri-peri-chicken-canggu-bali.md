@@ -84,7 +84,7 @@ Flame-grilled Peri Peri chicken is one of the healthier fast-food options — it
 
 ## Visit Nico's Smokehouse
 
-**Location:** Jalan Raya Canggu, Tibubeneng, Canggu, Bali  
+**Location:** Jl. Raya Canggu, Tibubeneng, Kec. Kuta Utara, Kabupaten Badung, Bali 80361  
 **Hours:** 12pm – 12am Daily  
 **Cuisines:** Peri Peri, Texas BBQ, Caribbean, Jamaican  
 
