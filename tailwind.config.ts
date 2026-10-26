@@ -42,6 +42,10 @@ const config: Config = {
           from: { transform: "scale(1.02)" },
           to: { transform: "scale(1.12)" },
         },
+        bob: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-6px)" },
+        },
         "pulse-subtle": {
           "0%, 100%": { filter: "drop-shadow(0 0 22px rgba(236,73,19,0.45))" },
           "50%": { filter: "drop-shadow(0 0 42px rgba(251,191,36,0.7))" },
@@ -53,6 +57,7 @@ const config: Config = {
         marquee: "marquee 48s linear infinite",
         "marquee-sports": "marquee 32s linear infinite",
         "pulse-subtle": "pulse-subtle 3s ease-in-out infinite",
+        bob: "bob 4s ease-in-out infinite",
       },
     },
   },

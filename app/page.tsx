@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import Ticker from "@/components/Ticker";
 import Story from "@/components/Story";
 import Specialties from "@/components/Specialties";
+import Crew from "@/components/Crew";
 import MenuSection from "@/components/menu/MenuSection";
 import Deal from "@/components/Deal";
 import CateringTeaser from "@/components/CateringTeaser";
@@ -21,6 +22,7 @@ export default function HomePage() {
         <Ticker />
         <Story />
         <Specialties />
+        <Crew />
         <MenuSection />
         <Deal />
         <CateringTeaser />

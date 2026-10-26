@@ -149,3 +149,8 @@ body {
     transform: none;
   }
 }
+
+/* Standalone pages hide the mobile action bar, so drop the space reserved for it */
+body:has([data-bare-page]) {
+  padding-bottom: 0;
+}

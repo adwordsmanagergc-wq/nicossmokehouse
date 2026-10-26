@@ -18,6 +18,17 @@ export const IMAGES = {
   specialtyJamaican: "/images/caribbean-food-bali.png",
   specialtyTexas: "/images/nicossmokehouserib.png",
   specialtyPeriPeri: "/images/nicosperiperi.png",
+  // Mascots — transparent cut-outs, each standing on its own name sign
+  mascotNico: "/images/mascots/nico.png",
+  mascotCluck: "/images/mascots/cluck.png",
+  mascotHammer: "/images/mascots/hammer.png",
+};
+
+// Intrinsic sizes of the mascot cut-outs (for next/image)
+export const MASCOT_SIZES = {
+  nico: { width: 277, height: 468 },
+  cluck: { width: 343, height: 463 },
+  hammer: { width: 305, height: 458 },
 };
 
 // -----------------------------------------------------------------------------
@@ -56,6 +67,7 @@ export const analytics = {
 // -----------------------------------------------------------------------------
 export const links = {
   instagram: "https://instagram.com/nicossmokehouse",
+  googleReview: "https://g.page/r/CYlBMYdGEjPpEBM/review",
   gofood:
     "https://gofood.co.id/bali/restaurant/nico-s-smokehouse-tibubeneng-29af8618-1b2e-4d45-8522-e5c673344d15",
   grab: "https://food.grab.com/id/id/restaurant/nico-s-smokehouse-tibubeneng-delivery/6-C7LBDE2ECFJUTE",
@@ -64,6 +76,30 @@ export const links = {
     "https://wa.me/6287867966662?text=Hi%2C%20I'd%20like%20to%20enquire%20about%20catering",
   googleMapsDirections:
     "https://www.google.com/maps/dir/?api=1&destination=Jl.+Raya+Canggu%2C+Tibubeneng%2C+Kec.+Kuta+Utara%2C+Kabupaten+Badung%2C+Bali+80361",
+};
+
+// -----------------------------------------------------------------------------
+//  /reviewandfollow — table QR / link-in-bio page
+// -----------------------------------------------------------------------------
+export const reviewAndFollow = {
+  metaTitle: "Review & Follow | Nico's Smokehouse Canggu",
+  metaDescription:
+    "Enjoyed your meal at Nico's Smokehouse? Leave us a Google review and follow @nicossmokehouse on Instagram.",
+  eyebrow: "Thanks for eating with us",
+  headingTop: "Loved the",
+  headingAccent: "smoke?",
+  subheading: "Two taps that mean the world to a small, 11\u2011table smokehouse in Canggu.",
+  review: {
+    label: "Leave a Google Review",
+    sub: "Tell us how we did",
+    href: links.googleReview,
+  },
+  follow: {
+    label: "Follow on Instagram",
+    sub: "@nicossmokehouse",
+    href: links.instagram,
+  },
+  signoff: "Terima kasih · See you next time",
 };
 
 // -----------------------------------------------------------------------------
@@ -222,6 +258,42 @@ export const visit = {
 // -----------------------------------------------------------------------------
 //  SPECIALTIES — "Three Fires, One Kitchen"
 // -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+//  MEET THE CREW — mascots
+// -----------------------------------------------------------------------------
+export const crew = {
+  eyebrow: "MEET THE CREW",
+  headingTop: "The gang",
+  headingAccent: "behind the smoke.",
+  intro: "Three characters, three fires. Say hi next time you're in.",
+  members: [
+    {
+      key: "nico" as const,
+      name: "Nico",
+      role: "The Boss · Texas BBQ",
+      bio: "Runs the pit and signs off every 14-hour brisket personally. If it's beef and it's smoked, it's Nico's business.",
+      image: IMAGES.mascotNico,
+      alt: "Nico the bull, Nico's Smokehouse mascot, in a black Nico's t-shirt and jeans",
+    },
+    {
+      key: "cluck" as const,
+      name: "Cluck",
+      role: "The Ref · Jerk & Peri Peri",
+      bio: "Keeps the jerk chicken honest and the peri peri fair. Mild or extra hot? Cluck makes the call.",
+      image: IMAGES.mascotCluck,
+      alt: "Cluck the rooster, Nico's Smokehouse mascot, in a referee shirt with a whistle",
+    },
+    {
+      key: "hammer" as const,
+      name: "Hammer",
+      role: "The Muscle · Ribs & Pork",
+      bio: "Lifts racks of slow-smoked ribs for breakfast and makes sure nobody leaves hungry. Nobody.",
+      image: IMAGES.mascotHammer,
+      alt: "Hammer the pig, Nico's Smokehouse mascot, flexing in a black Nico's polo shirt",
+    },
+  ],
+};
+
 export const specialties = {
   eyebrow: "OUR SPECIALTIES",
   heading: "THREE FIRES, ONE KITCHEN",

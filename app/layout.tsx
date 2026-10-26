@@ -5,6 +5,7 @@ import { site, seo, analytics, IMAGES } from "@/lib/content";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import StickyBookButton from "@/components/StickyBookButton";
+import SiteChrome from "@/components/SiteChrome";
 import "./globals.css";
 
 const display = Bebas_Neue({
@@ -74,10 +75,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <style>{`.reveal,.hero-in,.hero-photo{opacity:1!important;transform:none!important}`}</style>
         </noscript>
 
-        <Nav />
+        <SiteChrome>
+          <Nav />
+        </SiteChrome>
         {children}
-        <Footer />
-        <StickyBookButton />
+        <SiteChrome>
+          <Footer />
+          <StickyBookButton />
+        </SiteChrome>
 
         {analytics.googleAdsId ? (
           <>

@@ -79,6 +79,31 @@ CTA: **Book a Table**
 
 ---
 
+## Review & Follow page (`reviewAndFollow`, `/reviewandfollow`)
+
+| Field          | Value |
+| -------------- | ----- |
+| Eyebrow        | Thanks for eating with us |
+| Heading        | Loved the smoke? |
+| Subheading     | Two taps that mean the world to a small, 11-table smokehouse in Canggu. |
+| Review button  | Leave a Google Review — Tell us how we did → https://g.page/r/CYlBMYdGEjPpEBM/review |
+| Follow button  | Follow on Instagram — @nicossmokehouse → https://instagram.com/nicossmokehouse |
+| Sign-off       | Terima kasih · See you next time |
+
+---
+
+## Meet the Crew (`crew`)
+
+Mascot cut-outs live in `public/images/mascots/` (nico.png, cluck.png, hammer.png).
+
+| Mascot | Role | Bio |
+| ------ | ---- | --- |
+| Nico   | The Boss · Texas BBQ | Runs the pit and signs off every 14-hour brisket personally. If it's beef and it's smoked, it's Nico's business. |
+| Cluck  | The Ref · Jerk & Peri Peri | Keeps the jerk chicken honest and the peri peri fair. Mild or extra hot? Cluck makes the call. |
+| Hammer | The Muscle · Ribs & Pork | Lifts racks of slow-smoked ribs for breakfast and makes sure nobody leaves hungry. Nobody. |
+
+---
+
 ## FAQ (`faq`)
 
 **Eyebrow:** FREQUENTLY ASKED · **Heading:** QUESTIONS
