@@ -103,6 +103,103 @@ export const reviewAndFollow = {
 };
 
 // -----------------------------------------------------------------------------
+//  /ourfamily — the Nico's family of restaurants
+// -----------------------------------------------------------------------------
+export const family = {
+  metaTitle: "Our Family of Restaurants in Canggu, Bali | Nico's Smokehouse",
+  metaDescription:
+    "Meet the Nico's Smokehouse family in Canggu: Nana Sans Indian & tandoori, Roasted Cafe, plus Proper Kebabs and Bhella Pizza coming soon. Same heart, same soul.",
+  eyebrow: "OUR FAMILY",
+  headingTop: "One family.",
+  headingAccent: "Same heart & soul.",
+  intro:
+    "Nico's Smokehouse was just the start. Today our little family of kitchens stretches from the smoker to the tandoor to the espresso machine, with two more on the way. Different menus, different flavours, but every single one is built the same way: proper food, made with care, served like you're one of our own.",
+  members: [
+    {
+      key: "nicos",
+      name: "Nico's Smokehouse",
+      tag: "Texas BBQ · Caribbean · Peri Peri",
+      status: "You're here",
+      statusTone: "here" as const,
+      icon: "flame" as const,
+      accent: "from-fire to-ember",
+      description:
+        "Where it all began. Brisket smoked low and slow for 14+ hours, Jamaican jerk chicken, curry goat and oxtail, and flame-grilled peri peri, all under one roof in Tibubeneng. An intimate, air-conditioned 11-table smokehouse that treats every plate like it's going to family.",
+      cta: { label: "Explore Nico's", href: "/", external: false },
+    },
+    {
+      key: "nanasans",
+      name: "Nana Sans",
+      tag: "Indian Restaurant & Tandoori",
+      status: "Right next door",
+      statusTone: "open" as const,
+      icon: "cookingPot" as const,
+      accent: "from-[#f59e0b] to-[#b45309]",
+      description:
+        "Indian soul, British heart. Slow-cooked tandoori from a proper clay oven, rich creamy curries and all the British-Indian favourites you've been missing, from chicken tikka masala to garlic naan. Air-conditioned, with plenty of vegetarian and vegan options, and right next door to Nico's.",
+      cta: { label: "nanasans.com", href: "https://nanasans.com", external: true },
+    },
+    {
+      key: "roasted",
+      name: "Roasted Cafe",
+      tag: "Coffee · Matcha · Breakfast",
+      status: "Soft opening now",
+      statusTone: "open" as const,
+      icon: "coffee" as const,
+      accent: "from-[#a16207] to-[#57341a]",
+      description:
+        "Our cafe in Tibubeneng, five minutes from Berawa. Coffee from our own Roasted blend by Lavazza, matcha and ube lattes, flavoured foams and fresh croissants, in a brick-and-teak space with fast wifi, power points and air con. Build your own drink: there are over 400 ways to make it yours.",
+      cta: { label: "roastedcafecanggu.com", href: "https://roastedcafecanggu.com", external: true },
+    },
+    {
+      key: "kebabs",
+      name: "Proper Kebabs",
+      tag: "Aussie & UK Kebabs",
+      status: "Coming soon",
+      statusTone: "soon" as const,
+      icon: "sandwich" as const,
+      accent: "from-[#dc2626] to-[#7f1d1d]",
+      description:
+        "Aussie and UK kebabs, finally in Bali. Craving that lamb doner like back home? Seasoned lamb stacked high, shaved hot off the spit and loaded into warm, fresh bread with crisp salad and proper garlic and chilli sauce. Plus loaded chips and the late-night snack pack you've been dreaming about since you landed. No shortcuts, just a proper kebab.",
+      cta: null,
+    },
+    {
+      key: "bhella",
+      name: "Bhella Pizza",
+      tag: "Wood-Fired Pizza",
+      status: "Coming soon",
+      statusTone: "soon" as const,
+      icon: "pizza" as const,
+      accent: "from-[#16a34a] to-[#b91c1c]",
+      description:
+        "Our own dough, made fresh in-house every day and given the time it needs to rise. Hand-stretched, then fired in a blazing wood oven until the crust puffs up light, airy and leopard-spotted with char. Simple, quality toppings, bubbling cheese and that smoky wood-fired flavour you can't fake. Pizza done properly.",
+      cta: null,
+    },
+  ],
+  values: {
+    heading: "What ties us together",
+    items: [
+      {
+        title: "Made from scratch",
+        text: "Rubs, curries, sauces, dough: if we can make it ourselves, we do.",
+      },
+      {
+        title: "Never rushed",
+        text: "Low-and-slow smoke, a proper clay oven, dough given time to rise. Good food takes the time it takes.",
+      },
+      {
+        title: "Treated like family",
+        text: "Walk into any of our places and you'll get the same welcome, and the same care on the plate.",
+      },
+    ],
+  },
+  closing: {
+    heading: "Start where it all began",
+    text: "Pull up a chair at Nico's Smokehouse and taste the heart behind the whole family.",
+  },
+};
+
+// -----------------------------------------------------------------------------
 //  SEO METADATA
 // -----------------------------------------------------------------------------
 export const seo = {
@@ -429,6 +526,7 @@ export const footer = {
     ],
   },
   copyright: "Nico's Smokehouse. All rights reserved.",
+  family: { label: "Our Family", href: "/ourfamily" },
   credit: { label: "Website built by metatapdigital.com", href: "https://metatapdigital.com" },
   finalCta: { label: "Book a Table", href: links.whatsappBooking },
 };

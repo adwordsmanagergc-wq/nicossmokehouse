@@ -104,6 +104,28 @@ Mascot cut-outs live in `public/images/mascots/` (nico.png, cluck.png, hammer.pn
 
 ---
 
+## Our Family page (`family`, `/ourfamily`)
+
+**Heading:** One family. Same heart & soul.
+
+**Intro:** Nico's Smokehouse was just the start. Today our little family of kitchens stretches from the smoker to the tandoor to the espresso machine, with two more on the way. Different menus, different flavours, but every single one is built the same way: proper food, made with care, served like you're one of our own.
+
+| Restaurant | Tag | Status | Link |
+| ---------- | --- | ------ | ---- |
+| Nico's Smokehouse | Texas BBQ · Caribbean · Peri Peri | You're here | / (home page) |
+| Nana Sans | Indian Restaurant & Tandoori | Right next door | https://nanasans.com |
+| Roasted Cafe | Coffee · Matcha · Breakfast | Soft opening now | https://roastedcafecanggu.com |
+| Proper Kebabs | Aussie & UK Kebabs | Coming soon | — |
+| Bhella Pizza | Wood-Fired Pizza | Coming soon | — |
+
+Descriptions for each live in `lib/content.ts` → `family.members`.
+
+**What ties us together:** Made from scratch · Never rushed · Treated like family
+
+**Closing:** Start where it all began. Pull up a chair at Nico's Smokehouse and taste the heart behind the whole family.
+
+---
+
 ## FAQ (`faq`)
 
 **Eyebrow:** FREQUENTLY ASKED · **Heading:** QUESTIONS
@@ -143,6 +165,7 @@ Mascot cut-outs live in `public/images/mascots/` (nico.png, cluck.png, hammer.pn
 
 **Final CTA:** Book a Table
 **Copyright:** © (current year) Nico's Smokehouse. All rights reserved.
+**Our Family link:** Our Family (links to /ourfamily)
 **Credit:** Website built by metatapdigital.com (links to https://metatapdigital.com)
 
 ---

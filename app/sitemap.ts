@@ -26,6 +26,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     })),
 
+    // Family of restaurants
+    {
+      url: `${site.url}/ourfamily`,
+      lastModified: now,
+      changeFrequency: monthly,
+      priority: 0.6,
+    },
+
     // Catering hub
     {
       url: `${site.url}/catering-bali`,

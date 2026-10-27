@@ -108,9 +108,14 @@ export default function Footer() {
           <p>
             &copy; {year} {footer.copyright}
           </p>
-          <a href={footer.credit.href} target="_blank" rel="noopener" className="transition-colors hover:text-cream">
-            {footer.credit.label}
-          </a>
+          <div className="flex flex-col gap-2 md:flex-row md:gap-6">
+            <Link href={footer.family.href} className="transition-colors hover:text-cream">
+              {footer.family.label}
+            </Link>
+            <a href={footer.credit.href} target="_blank" rel="noopener" className="transition-colors hover:text-cream">
+              {footer.credit.label}
+            </a>
+          </div>
         </div>
       </div>
     </footer>
