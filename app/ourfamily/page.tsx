@@ -131,12 +131,23 @@ export default function OurFamilyPage() {
                         }`}
                       >
                         <div className="burnt-edge pointer-events-none absolute inset-0 rounded-[26px]" aria-hidden="true" />
-                        <div className="relative flex items-start justify-between gap-3">
-                          <span
-                            className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br shadow-lg ring-4 ring-smoke ${m.accent}`}
-                          >
-                            <Icon className="h-7 w-7 text-white" aria-hidden="true" />
-                          </span>
+                        <div className="relative flex flex-wrap items-start justify-between gap-3 xl:flex-col xl:justify-start">
+                          {m.logo ? (
+                            <Image
+                              src={m.logo.src}
+                              alt={m.logo.alt}
+                              width={m.logo.width}
+                              height={m.logo.height}
+                              sizes="160px"
+                              className={`w-auto ${m.logo.width > m.logo.height ? "h-14" : "h-14 rounded-full ring-4 ring-smoke"}`}
+                            />
+                          ) : (
+                            <span
+                              className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br shadow-lg ring-4 ring-smoke ${m.accent}`}
+                            >
+                              <Icon className="h-7 w-7 text-white" aria-hidden="true" />
+                            </span>
+                          )}
                           <span
                             className={`rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] ${STATUS_STYLE[m.statusTone]}`}
                           >
@@ -144,44 +155,54 @@ export default function OurFamilyPage() {
                           </span>
                         </div>
 
-                        <h2 className="relative mt-6 font-display text-4xl leading-none text-cream">{m.name}</h2>
+                        <p className="relative mt-6 text-[11px] font-bold uppercase tracking-[0.22em] text-gold/80">
+                          {m.born}
+                        </p>
+                        <h2 className="relative mt-2 font-display text-4xl leading-none text-cream">{m.name}</h2>
                         <p className="relative mt-2 text-[11px] font-bold uppercase tracking-[0.2em] text-ember">
                           {m.tag}
                         </p>
-                        <p className="relative mt-4 flex-1 text-[15px] leading-relaxed text-cream/75">
-                          {m.description}
-                        </p>
+                        <div className="relative mt-4 flex-1">
+                          <p className="text-[15px] leading-relaxed text-cream/75">{m.description}</p>
+                          {m.note ? (
+                            <div className="mt-4 rounded-xl border border-fire/30 bg-fire/10 px-4 py-3">
+                              <p className="font-display text-xl tracking-wide text-fire">{m.note.heading}</p>
+                              <p className="mt-1 text-sm leading-relaxed text-cream/80">{m.note.text}</p>
+                            </div>
+                          ) : null}
+                        </div>
 
-                        <div className="relative mt-6">
-                          {m.cta === null ? (
+                        <div className="relative mt-6 flex flex-wrap gap-2">
+                          {m.ctas.length === 0 ? (
                             <span className="inline-flex items-center gap-2 rounded-full border border-dashed border-gold/40 px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-gold/80">
                               <Heart className="h-4 w-4" aria-hidden="true" />
                               Opening soon
                             </span>
-                          ) : m.cta.external ? (
-                            <a
-                              href={m.cta.href}
-                              target="_blank"
-                              rel="noopener"
-                              className="group inline-flex max-w-full items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-semibold text-cream transition hover:border-fire hover:text-fire"
-                            >
-                              {m.cta.label}
-                              <ArrowUpRight
-                                className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                                aria-hidden="true"
-                              />
-                            </a>
                           ) : (
-                            <Link
-                              href={m.cta.href}
-                              className="group inline-flex items-center gap-2 rounded-full bg-fire px-4 py-2.5 text-xs font-bold uppercase tracking-[0.14em] text-white transition hover:bg-ember"
-                            >
-                              {m.cta.label}
-                              <ArrowUpRight
-                                className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                                aria-hidden="true"
-                              />
-                            </Link>
+                            m.ctas.map((cta, ci) => {
+                              const cls = `group inline-flex max-w-full items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition ${
+                                ci === 0
+                                  ? "bg-fire text-white hover:bg-ember"
+                                  : "border border-white/15 bg-white/5 text-cream hover:border-fire hover:text-fire"
+                              }`;
+                              const arrow = (
+                                <ArrowUpRight
+                                  className="h-4 w-4 shrink-0 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                                  aria-hidden="true"
+                                />
+                              );
+                              return cta.external ? (
+                                <a key={cta.href} href={cta.href} target="_blank" rel="noopener" className={cls}>
+                                  {cta.label}
+                                  {arrow}
+                                </a>
+                              ) : (
+                                <Link key={cta.href} href={cta.href} className={cls}>
+                                  {cta.label}
+                                  {arrow}
+                                </Link>
+                              );
+                            })
                           )}
                         </div>
                       </article>

@@ -108,21 +108,23 @@ Mascot cut-outs live in `public/images/mascots/` (nico.png, cluck.png, hammer.pn
 
 **Heading:** One family. Same heart & soul.
 
-**Intro:** Nico's Smokehouse was just the start. Today our little family of kitchens stretches from the smoker to the tandoor to the espresso machine, with two more on the way. Different menus, different flavours, but every single one is built the same way: proper food, made with care, served like you're one of our own.
+**Intro:** It all started with Nana Sans, our firstborn. Nico's Smokehouse came along second, then Roasted Cafe, with two more little ones on the way. Different menus, different flavours, but every single one is raised the same way: proper food, made with care, served like you're one of our own.
 
-| Restaurant | Tag | Status | Link |
-| ---------- | --- | ------ | ---- |
-| Nico's Smokehouse | Texas BBQ · Caribbean · Peri Peri | You're here | / (home page) |
-| Nana Sans | Indian Restaurant & Tandoori | Right next door | https://nanasans.com |
-| Roasted Cafe | Coffee · Matcha · Breakfast | Soft opening now | https://roastedcafecanggu.com |
-| Proper Kebabs | Aussie & UK Kebabs | Coming soon | — |
-| Bhella Pizza | Wood-Fired Pizza | Coming soon | — |
+| # | Restaurant | Tag | Status | Links |
+| - | ---------- | --- | ------ | ----- |
+| 1 | Nana Sans (firstborn, shows the Nana Sans logo) | Indian Restaurant & Tandoori | Right next door | https://nanasans.com |
+| 2 | Nico's Smokehouse (second born) | Texas BBQ · Caribbean · Peri Peri | You're here | / (home page) |
+| 3 | Roasted Cafe (third born) | Coffee · Matcha · Breakfast | Soft opening · 9am–5pm | WhatsApp order to Nico's · https://roastedcafecanggu.com/menu |
+| 4 | Proper Kebabs | Aussie & UK Kebabs | Coming soon | — |
+| 5 | Bhella Pizza | Wood-Fired Pizza | Coming soon | — |
+
+**Roasted note — Sat at Nico's?** Order from the Roasted soft opening menu and we'll deliver it to your table. We're only two hops away. Available until 5pm.
 
 Descriptions for each live in `lib/content.ts` → `family.members`.
 
 **What ties us together:** Made from scratch · Never rushed · Treated like family
 
-**Closing:** Start where it all began. Pull up a chair at Nico's Smokehouse and taste the heart behind the whole family.
+**Closing:** Pull up a chair at Nico's. Our second born, and home to Nico, Cluck and Hammer. Come taste the heart behind the whole family.
 
 ---
 
