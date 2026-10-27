@@ -134,6 +134,19 @@ export const family = {
         "Where our family began. Indian soul, British heart: slow-cooked tandoori from a proper clay oven, rich creamy curries and all the British-Indian favourites you've been missing, from chicken tikka masala to garlic naan. Air-conditioned, with plenty of vegetarian and vegan options, and right next door to Nico's.",
       note: null,
       ctas: [{ label: "nanasans.com", href: "https://nanasans.com", external: true }],
+      // Used by the "which restaurant?" picker on /ourfamily
+      badge: "/images/family/nana-sans-emblem.png",
+      book: "https://wa.me/6281234564499?text=Hi%20Nana%20Sans%2C%20I'd%20like%20to%20book%20a%20table",
+      order: [
+        {
+          label: "GoFood",
+          href: "https://gofood.co.id/bali/restaurant/nana-sans-tandoori-kitchen-indian-restaurant-jalan-raya-canggu-no-10c-f682a778-bdca-4b87-bf0c-ffdaa384737a",
+        },
+        {
+          label: "GrabFood",
+          href: "https://food.grab.com/id/id/restaurant/nanasans-tandoori-kitchen-tibubeneng-delivery/6-C3DJGCL1BBUCUA",
+        },
+      ],
     },
     {
       key: "nicos",
@@ -154,6 +167,12 @@ export const family = {
         "Our second born, and the loud one. Brisket smoked low and slow for 14+ hours, Jamaican jerk chicken, curry goat and oxtail, and flame-grilled peri peri, all under one roof in Tibubeneng. An intimate, air-conditioned 11-table smokehouse that treats every plate like it's going to family.",
       note: null,
       ctas: [{ label: "Explore Nico's", href: "/", external: false }],
+      badge: IMAGES.logo,
+      book: links.whatsappBooking,
+      order: [
+        { label: "GoFood", href: links.gofood },
+        { label: "GrabFood", href: links.grab },
+      ],
     },
     {
       key: "roasted",
@@ -179,6 +198,14 @@ export const family = {
         },
         { label: "Soft opening menu", href: "https://roastedcafecanggu.com/menu", external: true },
       ],
+      badge: null,
+      book: "https://wa.me/6282323144171?text=Hi%20Roasted%2C%20I'd%20like%20to%20book%20a%20table",
+      order: [
+        {
+          label: "Order on WhatsApp",
+          href: "https://wa.me/6282323144171?text=Hi%20Roasted%2C%20I'd%20like%20to%20order%3A%20",
+        },
+      ],
     },
     {
       key: "kebabs",
@@ -194,6 +221,9 @@ export const family = {
         "Aussie and UK kebabs, finally in Bali. Craving that lamb doner like back home? Seasoned lamb stacked high, shaved hot off the spit and loaded into warm, fresh bread with crisp salad and proper garlic and chilli sauce. Plus loaded chips and the late-night snack pack you've been dreaming about since you landed. No shortcuts, just a proper kebab.",
       note: null,
       ctas: [],
+      badge: null,
+      book: null,
+      order: [],
     },
     {
       key: "bhella",
@@ -209,6 +239,9 @@ export const family = {
         "Our own dough, made fresh in-house every day and given the time it needs to rise. Hand-stretched, then fired in a blazing wood oven until the crust puffs up light, airy and leopard-spotted with char. Simple, quality toppings, bubbling cheese and that smoky wood-fired flavour you can't fake. Pizza done properly.",
       note: null,
       ctas: [],
+      badge: null,
+      book: null,
+      order: [],
     },
   ],
   values: {

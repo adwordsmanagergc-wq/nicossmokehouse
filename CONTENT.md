@@ -122,6 +122,12 @@ Mascot cut-outs live in `public/images/mascots/` (nico.png, cluck.png, hammer.pn
 
 Descriptions for each live in `lib/content.ts` → `family.members`.
 
+**Booking / ordering picker:** on /ourfamily, every "Book a Table", WhatsApp or delivery (GoFood/Grab) button first asks which restaurant it's for.
+- Book: Nana Sans WhatsApp (+62 812-3456-4499) · Nico's WhatsApp · Roasted WhatsApp (+62 823-2314-4171)
+- Order online: Nana Sans GoFood/GrabFood · Nico's GoFood/GrabFood · Roasted order on WhatsApp
+- Proper Kebabs and Bhella Pizza show as "Coming soon"
+Links live in `family.members[].book` / `.order`.
+
 **What ties us together:** Made from scratch · Never rushed · Treated like family
 
 **Closing:** Pull up a chair at Nico's. Our second born, and home to Nico, Cluck and Hammer. Come taste the heart behind the whole family.

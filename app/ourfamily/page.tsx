@@ -4,17 +4,15 @@ import Link from "next/link";
 import {
   ArrowLeft,
   ArrowUpRight,
-  Coffee,
-  CookingPot,
   Flame,
   Heart,
-  Pizza,
-  Sandwich,
   Utensils,
 } from "lucide-react";
 import { family, links, site, IMAGES, MASCOT_SIZES } from "@/lib/content";
 import Embers from "@/components/Embers";
 import Reveal from "@/components/Reveal";
+import FamilyPicker from "@/components/family/FamilyPicker";
+import { FAMILY_ICONS } from "@/components/family/icons";
 
 export const metadata: Metadata = {
   title: family.metaTitle,
@@ -28,13 +26,6 @@ export const metadata: Metadata = {
   },
 };
 
-const ICONS = {
-  flame: Flame,
-  cookingPot: CookingPot,
-  coffee: Coffee,
-  sandwich: Sandwich,
-  pizza: Pizza,
-};
 
 const STATUS_STYLE = {
   here: "bg-fire text-white",
@@ -61,6 +52,7 @@ export default function OurFamilyPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumbJsonLd }} />
+      <FamilyPicker />
       <main>
         {/* Hero */}
         <section className="relative isolate overflow-hidden bg-char px-4 pb-16 pt-28 md:px-6 md:pb-24 md:pt-36">
@@ -121,7 +113,7 @@ export default function OurFamilyPage() {
             />
             <ol className="relative grid gap-6 md:grid-cols-2 xl:grid-cols-5 xl:gap-5">
               {family.members.map((m, i) => {
-                const Icon = ICONS[m.icon];
+                const Icon = FAMILY_ICONS[m.icon];
                 return (
                   <li key={m.key} className={i === 4 ? "md:col-span-2 xl:col-span-1" : ""}>
                     <Reveal delay={i * 90} className="h-full">
